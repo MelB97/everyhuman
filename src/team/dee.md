@@ -1,6 +1,6 @@
 ---
 name: Dee
-title: Office team
+title: Management
 team: Office team
 location: All locations
 photo: ""

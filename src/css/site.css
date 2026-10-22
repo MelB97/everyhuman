@@ -195,6 +195,7 @@ p{margin:0 0 1em}
 
 /* Video stories */
 .stories{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;list-style:none;margin:0;padding:0;max-width:980px}
+.story-card{position:relative}
 .story-card video{display:block;width:100%;aspect-ratio:9/16;object-fit:cover;border-radius:var(--r);background:#1d2b14;box-shadow:0 26px 50px -30px rgba(0,0,0,.6)}
 .story-name{display:flex;justify-content:space-between;align-items:baseline;gap:10px;margin:12px 4px 0}
 .story-name strong{font:600 1.3rem/1.1 var(--serif);color:#fff}

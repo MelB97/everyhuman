@@ -37,7 +37,7 @@ content:
         required: true
         default: "Support Worker"
         options:
-          values: ["Support Worker", "Senior Support Worker", "Team Leader", "Office team", "Director"]
+          values: ["Support Worker", "Senior Support Worker", "Team Leader", "Office team", "Management", "Director"]
       - name: team
         label: "Which group are they shown in?"
         type: select
@@ -130,7 +130,7 @@ content:
         list: true
         fields:
           - { name: name, label: "Title, e.g. Meet Brandon", type: string }
-          - { name: label, label: "Client or Support worker", type: string }
+          - { name: label, label: "Their role, e.g. Client, Support worker or Management", type: string }
           - { name: video, label: "Video (MP4, keep it under about 20 MB)", type: file, options: { media: videos } }
           - { name: poster, label: "Cover image (shown before it plays)", type: image, options: { media: videos } }
           - { name: description, label: "Describe the video (read aloud to blind visitors)", type: text, required: true, description: "One or two sentences about who is in it and what happens." }
