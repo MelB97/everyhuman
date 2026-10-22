@@ -26,9 +26,10 @@ eleventyComputed:
 <section class="sec sec-warm">
   <div class="wrap story story-rev">
     <div class="story-video">
-      <video controls playsinline preload="none" poster="{{ about.video_poster }}" aria-label="A short video of everyday moments at Every Human">
+      <video controls playsinline preload="none" poster="{{ about.video_poster }}" aria-label="Everyday moments at Every Human" aria-describedby="about-vd">
         <source src="{{ about.video }}" type="video/mp4">
       </video>
+      <p class="sr" id="about-vd">{{ about.video_description }}</p>
     </div>
     <div>
       <h2>{{ home.values_heading }}</h2>

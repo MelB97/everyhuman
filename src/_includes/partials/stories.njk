@@ -2,10 +2,17 @@
 <ul class="stories">
   {%- for s in stories %}
   <li class="story-card">
-    <video controls playsinline preload="none" poster="{{ s.poster }}" aria-label="{{ s.name }}, {{ s.label }}">
+    <video controls playsinline preload="none" poster="{{ s.poster }}" aria-label="{{ s.name }}, {{ s.label }}"{% if s.description %} aria-describedby="vd-{{ loop.index }}"{% endif %}>
       <source src="{{ s.video }}" type="video/mp4">
+      {%- if s.captions %}
+      <track kind="captions" src="{{ s.captions }}" srclang="en" label="English" default>
+      {%- endif %}
     </video>
     <p class="story-name"><strong>{{ s.name }}</strong><span>{{ s.label }}</span></p>
+    {%- if s.description %}<p class="sr" id="vd-{{ loop.index }}">{{ s.description }}</p>{% endif %}
+    {%- if s.transcript %}
+    <details class="transcript"><summary>Read the transcript</summary><p>{{ s.transcript | replace("\n", "<br>") | safe }}</p></details>
+    {%- endif %}
   </li>
   {%- endfor %}
 </ul>

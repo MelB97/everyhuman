@@ -128,11 +128,13 @@ eleventyComputed:
       <p class="lead">{{ home.moments_intro }}</p>
     </div>
   </div>
+  <div class="moments-scroll" tabindex="0" role="region" aria-label="{{ home.moments_heading }} photos, scroll sideways for more">
   <ul class="moments">
     {%- for m in home.moments %}
     <li>{% img m.image, m.alt, "(max-width: 640px) 60vw, 300px" %}</li>
     {%- endfor %}
   </ul>
+  </div>
 </section>
 {%- endif %}
 

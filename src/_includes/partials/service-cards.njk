@@ -2,7 +2,7 @@
 <ul class="cards svc-cards">
   {%- for s in collections.services %}
   <li class="card card-photo">
-    <div class="card-img">{% img s.data.image, "", "(max-width: 640px) 92vw, 380px" %}<span class="card-ico ico-{{ loop.index0 % 4 }}">{{ icon(s.data.icon) }}</span></div>
+    <div class="card-img">{% img s.data.image, s.data.image_alt, "(max-width: 640px) 92vw, 380px" %}<span class="card-ico ico-{{ loop.index0 % 4 }}">{{ icon(s.data.icon) }}</span></div>
     <div class="card-body">
       <h3><a class="card-link" href="{{ s.url }}">{{ s.data.title }}</a></h3>
       <p>{{ s.data.summary }}</p>

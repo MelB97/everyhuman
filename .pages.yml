@@ -11,7 +11,7 @@ media:
     input: src/videos
     output: /videos
     rename: safe
-    categories: [video, image]
+    categories: [video, image, document]
 
 content:
   # ── Our team ── one entry per person. Add, edit or delete people here.
@@ -110,7 +110,7 @@ content:
         list: true
         fields:
           - { name: image, label: Photo, type: image, options: { media: images } }
-          - { name: alt, label: "Describe the photo (for people using screen readers)", type: string }
+          - { name: alt, label: "Describe the photo (read aloud to blind visitors)", type: string, required: true, description: "One short sentence about who is in it and what they are doing, e.g. A support worker and client feeding an alpaca. Do not use names unless they have agreed." }
       - name: paths
         label: "The three 'I'm…' boxes"
         type: object
@@ -133,6 +133,9 @@ content:
           - { name: label, label: "Client or Support worker", type: string }
           - { name: video, label: "Video (MP4, keep it under about 20 MB)", type: file, options: { media: videos } }
           - { name: poster, label: "Cover image (shown before it plays)", type: image, options: { media: videos } }
+          - { name: description, label: "Describe the video (read aloud to blind visitors)", type: text, required: true, description: "One or two sentences about who is in it and what happens." }
+          - { name: captions, label: "Captions file (.vtt, optional but recommended)", type: file, options: { media: videos }, description: "Captions let deaf and hard of hearing visitors follow along." }
+          - { name: transcript, label: "Transcript (optional)", type: text, description: "What is said in the video, typed out. Shown under the video for anyone who prefers to read." }
       - { name: steps_heading, label: "Getting started heading", type: string }
       - name: steps
         label: "Getting started steps"
@@ -167,7 +170,7 @@ content:
         list: true
         fields:
           - { name: image, label: Photo, type: image, options: { media: images } }
-          - { name: alt, label: "Describe the photo (for people using screen readers)", type: string }
+          - { name: alt, label: "Describe the photo (read aloud to blind visitors)", type: string, required: true, description: "One short sentence about who is in it and what they are doing, e.g. A support worker and client feeding an alpaca. Do not use names unless they have agreed." }
       - { name: team_heading, label: "Team heading", type: string }
       - { name: team_intro, label: "Team intro", type: text }
       - { name: cta_heading, label: "Bottom banner heading", type: string }
@@ -187,9 +190,10 @@ content:
       - { name: story_heading, label: "Story heading", type: string }
       - { name: story_text, label: Story, type: text }
       - { name: photo, label: "Photo beside the story", type: image, options: { media: images } }
-      - { name: photo_alt, label: "Describe the photo", type: string }
+      - { name: photo_alt, label: "Describe the photo (read aloud to blind visitors)", type: string, required: true, description: "One short sentence about who is in it and what they are doing, e.g. A support worker and client feeding an alpaca." }
       - { name: video, label: "Video", type: file, options: { media: videos } }
       - { name: video_poster, label: "Video cover image", type: image, options: { media: videos } }
+      - { name: video_description, label: "Describe the video (read aloud to blind visitors)", type: text }
       - { name: child_safe, label: "Child safe statement", type: text }
       - { name: office_heading, label: "Office team heading", type: string }
       - { name: office_intro, label: "Office team intro", type: text }
@@ -208,19 +212,19 @@ content:
         type: object
         fields:
           - { name: image, label: Photo, type: image, options: { media: images } }
-          - { name: alt, label: "Describe the photo", type: string }
+          - { name: alt, label: "Describe the photo (read aloud to blind visitors)", type: string, required: true, description: "One short sentence about who is in it and what they are doing, e.g. A support worker and client feeding an alpaca." }
       - name: referrals
         label: "Referrals page"
         type: object
         fields:
           - { name: image, label: Photo, type: image, options: { media: images } }
-          - { name: alt, label: "Describe the photo", type: string }
+          - { name: alt, label: "Describe the photo (read aloud to blind visitors)", type: string, required: true, description: "One short sentence about who is in it and what they are doing, e.g. A support worker and client feeding an alpaca." }
       - name: contact
         label: "Contact page"
         type: object
         fields:
           - { name: image, label: Photo, type: image, options: { media: images } }
-          - { name: alt, label: "Describe the photo", type: string }
+          - { name: alt, label: "Describe the photo (read aloud to blind visitors)", type: string, required: true, description: "One short sentence about who is in it and what they are doing, e.g. A support worker and client feeding an alpaca." }
 
   # ── Services ──
   - name: services
@@ -244,7 +248,7 @@ content:
       - { name: summary, label: "Short summary (used in lists)", type: text }
       - { name: lead, label: "Intro under the heading", type: text }
       - { name: image, label: "Photo", type: image, options: { media: images } }
-      - { name: image_alt, label: "Describe the photo", type: string }
+      - { name: image_alt, label: "Describe the photo (read aloud to blind visitors)", type: string, required: true, description: "One short sentence about who is in it and what they are doing, e.g. A support worker and client feeding an alpaca." }
       - name: funding
         label: "Funding types"
         type: select
@@ -273,7 +277,7 @@ content:
       - { name: team_location, label: "Team location label (must match the team list)", type: string }
       - { name: area, label: "Area we cover", type: string }
       - { name: image, label: "Photo", type: image, options: { media: images } }
-      - { name: image_alt, label: "Describe the photo", type: string }
+      - { name: image_alt, label: "Describe the photo (read aloud to blind visitors)", type: string, required: true, description: "One short sentence about who is in it and what they are doing, e.g. A support worker and client feeding an alpaca." }
       - { name: summary, label: "Short summary (used in lists)", type: text }
       - { name: lead, label: "Intro under the heading", type: text }
       - { name: seo_title, label: "Google title", type: string }

@@ -25,7 +25,7 @@ layout: layouts/base.njk
       <h2>Available in</h2>
       <p>{% for l in collections.locations %}<a href="{{ l.url }}">{{ l.data.area }}</a>{% if not loop.last %}, {% endif %}{% endfor %}.</p>
     </article>
-    <aside class="svc-side">
+    <div class="svc-side">
       <p class="side-h">Other ways we can help</p>
       <ul>
         {%- for s in collections.services %}{% if s.url != page.url %}
@@ -37,7 +37,7 @@ layout: layouts/base.njk
         <p>Send us a referral and we'll take it from there.</p>
         <a class="text-link" href="/referrals/">Make a referral {{ icon("arrow") }}</a>
       </div>
-    </aside>
+    </div>
   </div>
 </section>
 {% include "partials/cta.njk" %}

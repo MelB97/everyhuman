@@ -56,19 +56,28 @@
       "name": "Meet Brandon",
       "label": "Client",
       "video": "/videos/meet-brandon.mp4",
-      "poster": "/videos/meet-brandon.jpg"
+      "poster": "/videos/meet-brandon.jpg",
+      "description": "Brandon, a client, talks to the camera in a park, and is shown going out with his support worker, including travelling in a wheelchair accessible van.",
+      "captions": "",
+      "transcript": ""
     },
     {
       "name": "Meet Michael",
       "label": "Client",
       "video": "/videos/meet-michael.mp4",
-      "poster": "/videos/meet-michael.jpg"
+      "poster": "/videos/meet-michael.jpg",
+      "description": "Michael, a client, talks about his support, and is shown exercising at an outdoor gym by the beach with his support worker.",
+      "captions": "",
+      "transcript": ""
     },
     {
       "name": "Meet Dee",
       "label": "Support worker",
       "video": "/videos/meet-dee.mp4",
-      "poster": "/videos/meet-dee.jpg"
+      "poster": "/videos/meet-dee.jpg",
+      "description": "Dee, a support worker, talks to the camera outdoors by the coast about her work with Every Human.",
+      "captions": "",
+      "transcript": ""
     }
   ],
   "steps_heading": "Getting started is simple",

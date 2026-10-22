@@ -198,10 +198,12 @@ p{margin:0 0 1em}
 .story-card video{display:block;width:100%;aspect-ratio:9/16;object-fit:cover;border-radius:var(--r);background:#1d2b14;box-shadow:0 26px 50px -30px rgba(0,0,0,.6)}
 .story-name{display:flex;justify-content:space-between;align-items:baseline;gap:10px;margin:12px 4px 0}
 .story-name strong{font:600 1.3rem/1.1 var(--serif);color:#fff}
-.story-name span{font-size:.92rem;font-weight:700;color:var(--sun)}
+.story-name span{font-size:.92rem;font-weight:700;color:#ffd98a}
 
 /* Everyday moments gallery */
-.moments{display:flex;gap:16px;list-style:none;margin:0;padding:6px var(--gut) 18px;overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:thin}
+.moments-scroll{overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:thin}
+.moments-scroll:focus-visible{outline-offset:-3px}
+.moments{display:flex;gap:16px;list-style:none;margin:0;padding:6px var(--gut) 18px;width:max-content}
 .moments li{flex:none;width:clamp(200px,24vw,300px);aspect-ratio:4/5;border-radius:var(--r);overflow:hidden;scroll-snap-align:start;background:var(--line)}
 .moments li:nth-child(even){margin-top:34px}
 .moments picture,.moments img{width:100%;height:100%}
@@ -424,3 +426,8 @@ select{appearance:none;background-image:url("data:image/svg+xml,%3Csvg xmlns='ht
 /* Service boxes: every box the same height, whichever row it's in */
 @media (min-width:961px){.svc-cards{display:grid;grid-template-columns:repeat(8,1fr);grid-auto-rows:1fr}.svc-cards>li{grid-column:span 2}.svc-cards>li:nth-child(5){grid-column:2/span 2}}
 @media (min-width:641px) and (max-width:960px){.svc-cards{display:grid;grid-template-columns:repeat(4,1fr);grid-auto-rows:1fr}.svc-cards>li{grid-column:span 2}.svc-cards>li:last-child:nth-child(odd){grid-column:2/span 2}}
+
+/* Video transcripts */
+.transcript{margin:10px 4px 0;color:#d6e3c8;font-size:.98rem}
+.transcript summary{cursor:pointer;font-weight:700;color:#ffd98a}
+.transcript p{margin:.6em 0 0}
