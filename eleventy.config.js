@@ -25,6 +25,16 @@ async function makeImage(src, widths, formats = ["webp", "jpeg"]) {
   });
 }
 
+// Where each photo is centred when cropped (see src/_data/focus.json)
+function focusFor(src) {
+  try {
+    const map = JSON.parse(fs.readFileSync("src/_data/focus.json", "utf8"));
+    return map[String(src).split("?")[0]] || "50% 35%";
+  } catch {
+    return "50% 35%";
+  }
+}
+
 const byOrder = (a, b) => (a.data.order ?? 99) - (b.data.order ?? 99) || String(a.data.title).localeCompare(String(b.data.title));
 
 export default function (eleventyConfig) {
@@ -41,7 +51,7 @@ export default function (eleventyConfig) {
   eleventyConfig.addAsyncShortcode("img", async (src, alt = "", sizes = "100vw", cls = "", eager = false) => {
     const meta = await makeImage(src, [240, 480, 960, 1400]);
     if (!meta) return "";
-    const attrs = { alt, sizes, loading: eager ? "eager" : "lazy", decoding: "async" };
+    const attrs = { alt, sizes, loading: eager ? "eager" : "lazy", decoding: "async", style: `object-position:${focusFor(src)}` };
     if (cls) attrs.class = cls;
     if (eager) attrs.fetchpriority = "high";
     return Image.generateHTML(meta, attrs);

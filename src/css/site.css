@@ -108,7 +108,7 @@ p{margin:0 0 1em}
 .hex-cluster{list-style:none;margin:0;padding:0;position:relative;aspect-ratio:1/1.02}
 .hex{position:absolute;clip-path:polygon(25% 3%,75% 3%,100% 50%,75% 97%,25% 97%,0 50%);aspect-ratio:1.155/1;background:var(--sand)}
 .hex picture,.hex img{width:100%;height:100%}
-.hex img{object-fit:cover;object-position:center 25%}
+.hex img{object-fit:cover}
 .hex-1{width:64%;left:18%;top:24%;z-index:2}
 .hex-2{width:36%;left:0;top:2%}
 .hex-3{width:36%;right:0;top:4%}
@@ -149,7 +149,7 @@ p{margin:0 0 1em}
 .card-img picture{position:absolute;inset:0;display:block}
 .card-img img{position:absolute;inset:0}
 .card-img picture,.card-img img{width:100%;height:100%}
-.card-img img{object-fit:cover;object-position:center 30%}
+.card-img img{object-fit:cover}
 .card-img .card-ico{position:absolute;left:20px;bottom:-26px;margin:0;box-shadow:0 0 0 5px #fff}
 .card-body{padding:24px 26px 26px;flex:1;display:flex;flex-direction:column}
 .card-body .tags{margin-top:auto;padding-top:6px}
@@ -205,7 +205,7 @@ p{margin:0 0 1em}
 .moments li{flex:none;width:clamp(200px,24vw,300px);aspect-ratio:4/5;border-radius:var(--r);overflow:hidden;scroll-snap-align:start;background:var(--line)}
 .moments li:nth-child(even){margin-top:34px}
 .moments picture,.moments img{width:100%;height:100%}
-.moments img{object-fit:cover;object-position:center 30%}
+.moments img{object-fit:cover}
 @media (min-width:1300px){.moments{padding-left:calc((100vw - 1200px)/2 + var(--gut))}}
 
 /* Team */
