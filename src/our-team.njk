@@ -1,0 +1,57 @@
+---
+layout: layouts/base.njk
+permalink: /our-team/
+title: About us and our team
+eleventyComputed:
+  seo_title: "{{ about.seo_title }}"
+  seo_description: "{{ about.seo_description }}"
+---
+<section class="page-hd">
+  <div class="wrap">
+    <h1>{{ about.h1 }}</h1>
+    <p class="lead">{{ about.intro }}</p>
+  </div>
+</section>
+<section class="sec">
+  <div class="wrap story">
+    <div class="prose">
+      <h2>{{ about.story_heading }}</h2>
+      <p>{{ about.story_text }}</p>
+      <p>{{ about.child_safe }}</p>
+    </div>
+    <ul class="values values-sm">
+      {%- from "partials/icons.njk" import icon -%}
+      {%- for v in home.values %}
+      <li>{{ icon("check") }}<div><h3>{{ v.title }}</h3><p>{{ v.text }}</p></div></li>
+      {%- endfor %}
+    </ul>
+  </div>
+</section>
+{%- set office = [] -%}{%- set support = [] -%}
+{%- for t in collections.team -%}
+  {%- if t.data.team == "Office team" %}{% set office = (office.push(t), office) %}{% else %}{% set support = (support.push(t), support) %}{% endif -%}
+{%- endfor -%}
+{%- if office.length %}
+<section class="sec sec-soft">
+  <div class="wrap">
+    <div class="sec-hd"><h2>{{ about.office_heading }}</h2><p class="lead">{{ about.office_intro }}</p></div>
+    {%- set people = office %}
+    {% include "partials/team.njk" %}
+  </div>
+</section>
+{%- endif %}
+{%- if support.length %}
+<section class="sec">
+  <div class="wrap">
+    <div class="sec-hd"><h2>{{ about.support_heading }}</h2><p class="lead">{{ about.support_intro }}</p></div>
+    {%- set people = support %}
+    {% include "partials/team.njk" %}
+  </div>
+</section>
+{%- endif %}
+<section class="sec sec-warm">
+  <div class="wrap join">
+    <div><h2>Want to join us?</h2><p class="lead">We're always keen to meet kind, reliable people who love helping others live well.</p></div>
+    <div class="btns"><a class="btn btn-go" href="/careers/">See careers</a></div>
+  </div>
+</section>

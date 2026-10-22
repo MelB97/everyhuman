@@ -1,0 +1,209 @@
+# Settings for the website editor (Pages CMS). Each entry below is a section in the editor.
+media:
+  input: src/images/uploads
+  output: /images/uploads
+  rename: safe
+  categories: [image]
+
+content:
+  # ── Our team ── one entry per person. Add, edit or delete people here.
+  - name: team
+    label: "Our team"
+    type: collection
+    path: src/team
+    format: yaml-frontmatter
+    filename: "{primary}.md"
+    view:
+      primary: name
+      fields: [name, title, location, show]
+      sort: [name]
+    fields:
+      - name: name
+        label: "Name (as it should appear)"
+        type: string
+        required: true
+        description: "First name and last initial is fine, e.g. Sarah M."
+      - name: title
+        label: "Job title"
+        type: select
+        required: true
+        default: "Support Worker"
+        options:
+          values: ["Support Worker", "Senior Support Worker", "Team Leader", "Office team", "Director"]
+      - name: team
+        label: "Which group are they shown in?"
+        type: select
+        required: true
+        default: "Support team"
+        options:
+          values: ["Support team", "Office team"]
+      - name: location
+        label: "Location"
+        type: select
+        required: true
+        options:
+          values: ["Logan, QLD", "Wollongong, NSW", "Ulladulla, NSW", "All locations"]
+      - name: photo
+        label: "Photo (optional)"
+        type: image
+        description: "A clear, friendly photo of their face. If you leave this empty, their initials are shown instead."
+      - name: bio
+        label: "A little about them (optional)"
+        type: text
+        description: "One or two sentences, e.g. Loves the beach, footy and a good cuppa."
+      - name: show
+        label: "Show on the website"
+        type: boolean
+        default: true
+        description: "Untick to hide someone without deleting them."
+
+  # ── Business details ──
+  - name: site
+    label: "Business details"
+    type: file
+    path: src/_data/site.json
+    format: json
+    fields:
+      - { name: business_name, label: "Business name", type: string, required: true }
+      - { name: short_name, label: "Short name", type: string }
+      - { name: legal_name, label: "Legal name (shown in the footer, optional)", type: string }
+      - { name: abn, label: ABN, type: string }
+      - { name: tagline, label: "Slogan", type: string }
+      - { name: phone, label: "Phone number", type: string, required: true }
+      - { name: phone_note, label: "Line under the phone number", type: string }
+      - { name: email, label: "Main email (general enquiries)", type: string, required: true }
+      - { name: accounts_email, label: "Accounts email", type: string }
+      - { name: hours, label: "Office hours (optional)", type: string }
+      - { name: facebook, label: "Facebook page link (optional)", type: string }
+      - { name: logo, label: "Logo (optional, a PNG with a clear background or an SVG works best)", type: image }
+      - { name: response_time, label: "Message after a form is sent", type: string }
+      - { name: clothing_note, label: "Note for people looking for the clothing company", type: text }
+      - { name: clothing_link, label: "Clothing company's website", type: string }
+
+  # ── Homepage ──
+  - name: home
+    label: "Homepage"
+    type: file
+    path: src/_data/home.json
+    format: json
+    fields:
+      - { name: seo_title, label: "Google title", type: string, description: "Shown as the blue link in Google. Aim for under 60 characters." }
+      - { name: seo_description, label: "Google description", type: text, description: "Shown under the link in Google. Aim for 150–160 characters." }
+      - { name: kicker, label: "Small line above the heading", type: string }
+      - { name: h1, label: "Main heading", type: string }
+      - { name: h1_highlight, label: "Highlighted word at the end of the heading", type: string }
+      - { name: intro, label: "Intro text", type: text }
+      - name: paths
+        label: "The three 'I'm…' boxes"
+        type: object
+        list: true
+        fields:
+          - { name: title, label: Title, type: string }
+          - { name: text, label: Text, type: text }
+          - { name: button, label: "Link text", type: string }
+          - { name: link, label: "Link to", type: string }
+      - { name: services_heading, label: "Services heading", type: string }
+      - { name: services_intro, label: "Services intro", type: text }
+      - { name: steps_heading, label: "Getting started heading", type: string }
+      - name: steps
+        label: "Getting started steps"
+        type: object
+        list: true
+        fields:
+          - { name: title, label: Title, type: string }
+          - { name: text, label: Text, type: text }
+      - { name: funding_heading, label: "Funding heading", type: string }
+      - name: funding
+        label: "Funding options"
+        type: object
+        list: true
+        fields:
+          - { name: title, label: Title, type: string }
+          - { name: text, label: Text, type: text }
+      - { name: values_heading, label: "Why choose us heading", type: string }
+      - name: values
+        label: "Why choose us points"
+        type: object
+        list: true
+        fields:
+          - { name: title, label: Title, type: string }
+          - { name: text, label: Text, type: text }
+      - { name: locations_heading, label: "Locations heading", type: string }
+      - { name: locations_intro, label: "Locations intro", type: text }
+      - { name: team_heading, label: "Team heading", type: string }
+      - { name: team_intro, label: "Team intro", type: text }
+      - { name: cta_heading, label: "Bottom banner heading", type: string }
+      - { name: cta_text, label: "Bottom banner text", type: text }
+
+  # ── About us page ──
+  - name: about
+    label: "About us page"
+    type: file
+    path: src/_data/about.json
+    format: json
+    fields:
+      - { name: seo_title, label: "Google title", type: string }
+      - { name: seo_description, label: "Google description", type: text }
+      - { name: h1, label: "Page heading", type: string }
+      - { name: intro, label: Intro, type: text }
+      - { name: story_heading, label: "Story heading", type: string }
+      - { name: story_text, label: Story, type: text }
+      - { name: child_safe, label: "Child safe statement", type: text }
+      - { name: office_heading, label: "Office team heading", type: string }
+      - { name: office_intro, label: "Office team intro", type: text }
+      - { name: support_heading, label: "Support team heading", type: string }
+      - { name: support_intro, label: "Support team intro", type: text }
+
+  # ── Services ──
+  - name: services
+    label: "Services"
+    type: collection
+    path: src/services
+    format: yaml-frontmatter
+    view:
+      primary: title
+      fields: [title, order]
+      sort: [order]
+    fields:
+      - { name: title, label: "Page heading", type: string, required: true }
+      - { name: nav_title, label: "Short name (menus)", type: string, required: true }
+      - { name: order, label: "Order in lists", type: number }
+      - name: icon
+        label: Icon
+        type: select
+        options:
+          values: [personal, community, skills, home, transport, transitions, aged]
+      - { name: summary, label: "Short summary (used in lists)", type: text }
+      - { name: lead, label: "Intro under the heading", type: text }
+      - name: funding
+        label: "Funding types"
+        type: select
+        options:
+          values: ["NDIS", "Aged care", "Private"]
+          multiple: true
+      - { name: seo_title, label: "Google title", type: string }
+      - { name: seo_description, label: "Google description", type: text }
+      - { name: body, label: "Page content", type: rich-text }
+
+  # ── Locations ──
+  - name: locations
+    label: "Locations"
+    type: collection
+    path: src/locations
+    format: yaml-frontmatter
+    view:
+      primary: title
+      fields: [title, state]
+      sort: [order]
+    fields:
+      - { name: title, label: "Town or city", type: string, required: true }
+      - { name: state, label: State, type: select, options: { values: [QLD, NSW] } }
+      - { name: region, label: Region, type: string }
+      - { name: order, label: "Order in lists", type: number }
+      - { name: team_location, label: "Team location label (must match the team list)", type: string }
+      - { name: area, label: "Area we cover", type: string }
+      - { name: summary, label: "Short summary (used in lists)", type: text }
+      - { name: lead, label: "Intro under the heading", type: text }
+      - { name: seo_title, label: "Google title", type: string }
+      - { name: seo_description, label: "Google description", type: text }
+      - { name: body, label: "Page content", type: rich-text }

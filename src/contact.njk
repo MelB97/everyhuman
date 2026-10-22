@@ -1,0 +1,111 @@
+---
+layout: layouts/base.njk
+permalink: /contact-us/
+title: Contact us
+seo_title: Contact Us | Every Human Support Services
+seo_description: Call us, email or send an enquiry about NDIS or aged care support in Logan, Wollongong or Ulladulla. We'll get back to you within one business day.
+---
+{%- from "partials/icons.njk" import icon -%}
+{%- set callable = site.phone | hasPhone -%}
+{#- The enquiry form. The same fields are used twice: once for general enquiries (to admin)
+    and once, hidden, for accounts (so Netlify can email those to accounts instead). -#}
+{%- macro fields(prefix) -%}
+      <div class="field"><label for="{{ prefix }}-name">Your name</label><input id="{{ prefix }}-name" name="name" autocomplete="name" required></div>
+      <div class="field-row">
+        <div class="field"><label for="{{ prefix }}-phone">Phone</label><input id="{{ prefix }}-phone" name="phone" type="tel" autocomplete="tel" required></div>
+        <div class="field"><label for="{{ prefix }}-email">Email <span class="opt">(optional)</span></label><input id="{{ prefix }}-email" name="email" type="email" autocomplete="email"></div>
+      </div>
+      <div class="field-row">
+        <div class="field">
+          <label for="{{ prefix }}-location">Nearest location</label>
+          <select id="{{ prefix }}-location" name="location">
+            <option value="">Choose one</option>
+            {%- for l in collections.locations %}<option>{{ l.data.area }}</option>{% endfor %}
+            <option>Somewhere else</option>
+          </select>
+        </div>
+        <div class="field">
+          <label for="{{ prefix }}-funding">Funding <span class="opt">(if you know)</span></label>
+          <select id="{{ prefix }}-funding" name="funding">
+            <option value="">Not sure</option>
+            <option>NDIS</option>
+            <option>Aged care (My Aged Care)</option>
+            <option>Paying privately</option>
+          </select>
+        </div>
+      </div>
+      <div class="field"><label for="{{ prefix }}-msg">How can we help?</label><textarea id="{{ prefix }}-msg" name="message" rows="5"></textarea></div>
+{%- endmacro -%}
+<section class="page-hd">
+  <div class="wrap">
+    <h1>Contact us</h1>
+    <p class="lead">Give us a call or send an enquiry, and a real person from our team will get back to you.</p>
+  </div>
+</section>
+<section class="sec">
+  <div class="wrap contact-in">
+    <div class="contact-side">
+      {%- if callable %}
+      <a class="big-call" href="{{ site.phone | telLink }}">{{ icon("phone") }}<span><strong>{{ site.phone }}</strong><small>{{ site.phone_note }}</small></span></a>
+      {%- endif %}
+      <dl class="contact-facts">
+        <div><dt>{{ icon("mail") }} Email</dt><dd><a href="mailto:{{ site.email }}">{{ site.email }}</a></dd></div>
+        {%- if site.hours %}<div><dt>Hours</dt><dd>{{ site.hours }}</dd></div>{% endif %}
+        <div><dt>{{ icon("pin") }} Where we work</dt><dd>{% for l in collections.locations %}<a href="{{ l.url }}">{{ l.data.area }}</a>{% if not loop.last %}<br>{% endif %}{% endfor %}</dd></div>
+        <div><dt>Accounts and invoices</dt><dd><a href="mailto:{{ site.accounts_email }}">{{ site.accounts_email }}</a></dd></div>
+        <div><dt>Support coordinators</dt><dd><a href="/referrals/">Use our referral form</a></dd></div>
+      </dl>
+      {% include "partials/clothing.njk" %}
+    </div>
+
+    <div class="form-wrap">
+      <form class="form" id="enquiry" name="enquiry" method="POST" action="/thanks/" data-netlify="true" netlify-honeypot="bot-field" data-enquiry>
+        <h2>Send an enquiry</h2>
+        <input type="hidden" name="form-name" value="enquiry">
+        <p class="hp" aria-hidden="true"><label>Don't fill this out if you're human: <input name="bot-field" tabindex="-1" autocomplete="new-password"></label></p>
+        <div class="field">
+          <label for="f-about">What's this about?</label>
+          <select id="f-about" name="about" required>
+            <option value="">Choose one</option>
+            <option>Support for me</option>
+            <option>Support for someone I care for</option>
+            <option value="referral">I'm a support coordinator or referring someone</option>
+            <option value="careers">Working with Every Human</option>
+            <option value="accounts">Accounts and invoices</option>
+            <option>Feedback or a complaint</option>
+            <option value="clothing">An order from EveryHuman clothing</option>
+            <option>Something else</option>
+          </select>
+        </div>
+        <div class="tip" data-show="referral" hidden>{{ icon("info") }}<p>Our <a href="/referrals/">referral form</a> asks for everything we need in one go, so we can get started faster.</p></div>
+        <div class="tip" data-show="careers" hidden>{{ icon("info") }}<p>Head to <a href="/careers/">careers</a> to apply. You can attach your resume there.</p></div>
+        <div class="tip" data-show="accounts" hidden>{{ icon("info") }}<p>This will go straight to our accounts team. Please don't include bank or card details.</p></div>
+        <div class="tip tip-stop" data-show="clothing" hidden>{{ icon("info") }}<p><strong>We're a different business.</strong> We can't help with clothing or footwear orders, returns or deliveries. Please <a href="{{ site.clothing_link }}" rel="noopener nofollow">contact EveryHuman clothing through their website</a>.</p></div>
+        <div data-fields>
+{{ fields("f") }}
+          <p class="form-note">Please don't include NDIS plan, medical or bank details here. We'll collect anything like that securely once we're talking. See our <a href="/privacy-policy/">privacy policy</a>.</p>
+          <button class="btn btn-go" type="submit">Send enquiry</button>
+        </div>
+      </form>
+
+      {#- Hidden twin so Netlify knows the "accounts" form exists. The script above switches to it. -#}
+      <form name="accounts" method="POST" action="/thanks/" data-netlify="true" netlify-honeypot="bot-field" hidden>
+        <input type="hidden" name="form-name" value="accounts">
+        <input name="bot-field"><input name="about">
+        {{ fields("a") }}
+      </form>
+    </div>
+  </div>
+</section>
+
+<section class="sec sec-soft" id="feedback">
+  <div class="wrap prose narrow">
+    <h2>Feedback and complaints</h2>
+    <p>We want to hear from you, good or bad. You can give feedback or make a complaint by calling us, emailing <a href="mailto:{{ site.email }}">{{ site.email }}</a> or using the form above. You can ask a family member, friend or advocate to do this for you. We'll treat it confidentially, and it won't affect your support.</p>
+    <p>If you're not happy with how we handled it, you can contact:</p>
+    <ul>
+      <li><strong>NDIS Quality and Safeguards Commission:</strong> <a href="tel:1800035544">1800 035 544</a> or <a href="https://www.ndiscommission.gov.au" rel="noopener">ndiscommission.gov.au</a></li>
+      <li><strong>Aged Care Quality and Safety Commission:</strong> <a href="tel:1800951822">1800 951 822</a> or <a href="https://www.agedcarequality.gov.au" rel="noopener">agedcarequality.gov.au</a></li>
+    </ul>
+  </div>
+</section>

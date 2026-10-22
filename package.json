@@ -1,0 +1,15 @@
+{
+  "name": "everyhuman-website",
+  "private": true,
+  "type": "module",
+  "description": "Every Human Support Services website",
+  "scripts": {
+    "build": "eleventy",
+    "start": "eleventy --serve"
+  },
+  "dependencies": {
+    "@11ty/eleventy": "3.1.6",
+    "@11ty/eleventy-img": "6.0.4"
+  },
+  "engines": { "node": ">=20" }
+}

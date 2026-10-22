@@ -1,0 +1,42 @@
+---
+layout: layouts/base.njk
+---
+{%- from "partials/icons.njk" import icon -%}
+{%- set callable = site.phone | hasPhone -%}
+<section class="page-hd">
+  <div class="wrap">
+    <div>
+      <p class="crumb"><a href="/services/">Services</a></p>
+      <h1>{{ title }}</h1>
+      <p class="lead">{{ lead }}</p>
+      <p class="tags tags-lg">{% for f in funding %}<span>{{ f }}</span>{% endfor %}</p>
+      <div class="btns">
+        <a class="btn btn-go" href="/contact-us/">Get started</a>
+        {%- if callable %}<a class="btn btn-line" href="{{ site.phone | telLink }}">Call {{ site.phone }}</a>{% endif %}
+      </div>
+    </div>
+  </div>
+</section>
+<section class="sec">
+  <div class="wrap svc-body">
+    <article class="prose">
+      {{ content | safe }}
+      <h2>Available in</h2>
+      <p>{% for l in collections.locations %}<a href="{{ l.url }}">{{ l.data.area }}</a>{% if not loop.last %}, {% endif %}{% endfor %}.</p>
+    </article>
+    <aside class="svc-side">
+      <p class="side-h">Other ways we can help</p>
+      <ul>
+        {%- for s in collections.services %}{% if s.url != page.url %}
+        <li><a href="{{ s.url }}">{{ icon(s.data.icon) }}<span>{{ s.data.nav_title }}</span></a></li>
+        {%- endif %}{% endfor %}
+      </ul>
+      <div class="side-box">
+        <p class="side-h">Support coordinator?</p>
+        <p>Send us a referral and we'll take it from there.</p>
+        <a class="text-link" href="/referrals/">Make a referral {{ icon("arrow") }}</a>
+      </div>
+    </aside>
+  </div>
+</section>
+{% include "partials/cta.njk" %}

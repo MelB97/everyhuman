@@ -1,0 +1,13 @@
+{%- set callable = site.phone | hasPhone -%}
+<section class="cta">
+  <div class="wrap cta-in">
+    <div>
+      <h2>{{ home.cta_heading }}</h2>
+      <p>{{ home.cta_text }}</p>
+    </div>
+    <div class="btns">
+      <a class="btn btn-go" href="/contact-us/">Send an enquiry</a>
+      {%- if callable %}<a class="btn btn-line" href="{{ site.phone | telLink }}">Call {{ site.phone }}</a>{% endif %}
+    </div>
+  </div>
+</section>

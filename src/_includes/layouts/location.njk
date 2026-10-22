@@ -1,0 +1,43 @@
+---
+layout: layouts/base.njk
+---
+{%- from "partials/icons.njk" import icon -%}
+{%- set callable = site.phone | hasPhone -%}
+{%- set people = collections.team | inLocation(team_location) -%}
+<section class="page-hd">
+  <div class="wrap">
+    <p class="crumb"><a href="/locations/">Locations</a></p>
+    <h1>NDIS and aged care support in {{ title }}</h1>
+    <p class="lead">{{ lead }}</p>
+    <div class="btns">
+      <a class="btn btn-go" href="/contact-us/">Get started</a>
+      {%- if callable %}<a class="btn btn-line" href="{{ site.phone | telLink }}">Call {{ site.phone }}</a>{% endif %}
+    </div>
+  </div>
+</section>
+<section class="sec">
+  <div class="wrap loc-body">
+    <article class="prose">
+      <p class="loc-area">{{ icon("pin") }} We support people across {{ area }}.</p>
+      {{ content | safe }}
+    </article>
+    <div>
+      <h2 class="h-sm">Services in {{ title }}</h2>
+      <ul class="svc-list">
+        {%- for s in collections.services %}
+        <li><a href="{{ s.url }}">{{ icon(s.data.icon) }}<span><strong>{{ s.data.nav_title }}</strong>{{ s.data.summary }}</span></a></li>
+        {%- endfor %}
+      </ul>
+    </div>
+  </div>
+</section>
+{%- if people.length %}
+<section class="sec sec-soft">
+  <div class="wrap">
+    <h2>Your {{ title }} team</h2>
+    <p class="lead">Some of the friendly faces supporting people in {{ title }}.</p>
+    {% include "partials/team.njk" %}
+  </div>
+</section>
+{%- endif %}
+{% include "partials/cta.njk" %}

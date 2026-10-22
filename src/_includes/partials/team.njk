@@ -1,0 +1,14 @@
+{#- Team cards. Set `people` before including. -#}
+<ul class="team">
+  {%- for t in people %}
+  <li class="person">
+    <div class="person-pic {{ t.data.name | tint }}">
+      {%- if t.data.photo %}{% img t.data.photo, t.data.name ~ ", " ~ t.data.title ~ " at " ~ site.short_name, "200px" %}{% else %}<span aria-hidden="true">{{ t.data.name | initials }}</span>{% endif %}
+    </div>
+    <h3>{{ t.data.name }}</h3>
+    <p class="person-role">{{ t.data.title }}</p>
+    <p class="person-loc">{{ t.data.location }}</p>
+    {%- if t.data.bio %}<p class="person-about">{{ t.data.bio }}</p>{% endif %}
+  </li>
+  {%- endfor %}
+</ul>

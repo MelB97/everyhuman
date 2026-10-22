@@ -1,0 +1,145 @@
+{%- from "partials/icons.njk" import icon -%}
+{%- set pageTitle = seo_title or ((title ~ " | " ~ site.business_name) if title else site.business_name) -%}
+{%- set pageDesc = seo_description or home.seo_description -%}
+{%- set canonical = site.url ~ page.url -%}
+{%- set callable = site.phone | hasPhone -%}
+<!doctype html>
+<html lang="en-AU">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{{ pageTitle }}</title>
+  <meta name="description" content="{{ pageDesc }}">
+  {%- if noindex %}
+  <meta name="robots" content="noindex, nofollow">
+  {%- else %}
+  <link rel="canonical" href="{{ canonical }}">
+  {%- endif %}
+  {%- if site.google_site_verification %}
+  <meta name="google-site-verification" content="{{ site.google_site_verification }}">
+  {%- endif %}
+
+  {#- Link previews for Facebook, Messenger, text messages, LinkedIn #}
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="{{ site.business_name }}">
+  <meta property="og:title" content="{{ pageTitle }}">
+  <meta property="og:description" content="{{ pageDesc }}">
+  <meta property="og:url" content="{{ canonical }}">
+  <meta property="og:image" content="{{ (share_image or '') | shareImage(site.url) }}">
+  <meta property="og:locale" content="en_AU">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <meta name="theme-color" content="#1f4d4a">
+  <link rel="preload" href="/fonts/fraunces-latin-600-normal.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="/fonts/atkinson-hyperlegible-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="/css/site.css">
+
+  {#- Business details Google reads directly #}
+  <script type="application/ld+json">{{ site | bizSchema(home, collections.locations) | json | safe }}</script>
+  {%- if schema %}
+  <script type="application/ld+json">{{ schema | json | safe }}</script>
+  {%- endif %}
+</head>
+<body class="{{ bodyClass }}">
+  <a class="skip" href="#main">Skip to content</a>
+
+  <header class="hdr">
+    <div class="hdr-in wrap">
+      <a class="brand" href="/" aria-label="{{ site.business_name }} home">
+        {%- if site.logo %}
+        {% logo site.logo, "", "brand-logo" %}
+        {%- else %}
+        <svg class="brand-mark" viewBox="0 0 48 40" width="48" height="40" aria-hidden="true"><circle cx="17" cy="20" r="14" fill="#e07a4f"/><circle cx="31" cy="20" r="14" fill="#1f4d4a" fill-opacity=".85"/><path d="M24 31.6s-6.2-3.7-6.2-8.4a3.3 3.3 0 0 1 6.2-1.8 3.3 3.3 0 0 1 6.2 1.8c0 4.7-6.2 8.4-6.2 8.4z" fill="#fbf6ef"/></svg>
+        <span class="brand-txt"><span class="brand-name">Every Human</span><span class="brand-sub">Support Services</span></span>
+        {%- endif %}
+      </a>
+      <nav class="nav" id="site-nav" aria-label="Main">
+        <ul>
+          <li class="has-sub">
+            <a href="/services/"{% if page.url.startsWith("/services/") %} aria-current="page"{% endif %}>Services</a>
+            <ul class="sub">
+              {%- for s in collections.services %}
+              <li><a href="{{ s.url }}"{% if page.url == s.url %} aria-current="page"{% endif %}>{{ s.data.nav_title }}</a></li>
+              {%- endfor %}
+            </ul>
+          </li>
+          <li class="has-sub">
+            <a href="/locations/"{% if page.url.startsWith("/locations/") %} aria-current="page"{% endif %}>Locations</a>
+            <ul class="sub">
+              {%- for l in collections.locations %}
+              <li><a href="{{ l.url }}"{% if page.url == l.url %} aria-current="page"{% endif %}>{{ l.data.title }}, {{ l.data.state }}</a></li>
+              {%- endfor %}
+            </ul>
+          </li>
+          <li><a href="/our-team/"{% if page.url == "/our-team/" %} aria-current="page"{% endif %}>Our team</a></li>
+          <li><a href="/referrals/"{% if page.url == "/referrals/" %} aria-current="page"{% endif %}>Referrals</a></li>
+          <li><a href="/careers/"{% if page.url == "/careers/" %} aria-current="page"{% endif %}>Careers</a></li>
+          <li><a href="/contact-us/"{% if page.url == "/contact-us/" %} aria-current="page"{% endif %}>Contact</a></li>
+        </ul>
+      </nav>
+      <div class="hdr-act">
+        {%- if callable %}
+        <a class="hdr-call" href="{{ site.phone | telLink }}">{{ icon("phone") }}<span>{{ site.phone }}</span></a>
+        {%- endif %}
+        <a class="btn btn-go hdr-cta" href="/contact-us/">Get started</a>
+        <button class="menu-btn" type="button" aria-expanded="false" aria-controls="site-nav"><span class="sr">Menu</span><i></i><i></i><i></i></button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main">
+    {{ content | safe }}
+  </main>
+
+  <footer class="ftr">
+    <div class="wrap ftr-grid">
+      <div class="ftr-col ftr-id">
+        <p class="ftr-name">{{ site.business_name }}</p>
+        <p>{{ site.tagline }} for NDIS participants, older Australians and private clients. Family owned and operated.</p>
+        {%- if site.ndis_registered %}<p class="ndis-badge">{{ icon("check") }} Registered NDIS provider</p>{% endif %}
+      </div>
+      <div class="ftr-col">
+        <p class="ftr-h">Services</p>
+        <ul>
+          {%- for s in collections.services %}<li><a href="{{ s.url }}">{{ s.data.nav_title }}</a></li>{% endfor %}
+        </ul>
+      </div>
+      <div class="ftr-col">
+        <p class="ftr-h">Locations</p>
+        <ul>
+          {%- for l in collections.locations %}<li><a href="{{ l.url }}">{{ l.data.title }}, {{ l.data.state }}</a></li>{% endfor %}
+        </ul>
+        <p class="ftr-h ftr-h2">Get involved</p>
+        <ul>
+          <li><a href="/referrals/">Make a referral</a></li>
+          <li><a href="/careers/">Careers</a></li>
+        </ul>
+      </div>
+      <div class="ftr-col">
+        <p class="ftr-h">Contact</p>
+        <ul>
+          {%- if callable %}<li><a href="{{ site.phone | telLink }}">{{ site.phone }}</a></li>{% endif %}
+          <li><a href="mailto:{{ site.email }}">{{ site.email }}</a></li>
+          {%- if site.hours %}<li>{{ site.hours }}</li>{% endif %}
+          <li>Accounts and invoices: <a href="mailto:{{ site.accounts_email }}">{{ site.accounts_email }}</a></li>
+          {%- if site.facebook %}<li><a href="{{ site.facebook }}" rel="noopener">Facebook</a></li>{% endif %}
+        </ul>
+      </div>
+    </div>
+    <div class="wrap ftr-note">
+      <p>{{ icon("info") }} <span>{{ site.clothing_note }} <a href="{{ site.clothing_link }}" rel="noopener nofollow">Visit their website</a></span></p>
+    </div>
+    <div class="wrap ftr-base">
+      <p>&copy; {{ "" | year }} {{ site.legal_name or site.business_name }}{% if site.abn %} &middot; ABN {{ site.abn | abn }}{% endif %}</p>
+      <p>We acknowledge the Traditional Custodians of the lands where we live and work, and pay our respects to Elders past and present.</p>
+      <p><a href="/privacy-policy/">Privacy policy</a> &middot; <a href="/contact-us/#feedback">Feedback and complaints</a></p>
+    </div>
+  </footer>
+
+  {%- if callable %}
+  <a class="call-fab" href="{{ site.phone | telLink }}" aria-label="Call {{ site.phone }}">{{ icon("phone") }}<span>Call us</span></a>
+  {%- endif %}
+  <script src="/js/site.js" defer></script>
+</body>
+</html>

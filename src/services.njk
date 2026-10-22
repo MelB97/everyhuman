@@ -1,0 +1,20 @@
+---
+layout: layouts/base.njk
+permalink: /services/
+title: Our services
+seo_title: NDIS & Aged Care Services | Every Human Support Services
+seo_description: Personal care, community access, life skills, household tasks, transport and aged care at home in Logan, Wollongong and Ulladulla.
+---
+<section class="page-hd">
+  <div class="wrap">
+    <h1>Our services</h1>
+    <p class="lead">{{ home.services_intro }} Funded through the NDIS, My Aged Care or privately.</p>
+  </div>
+</section>
+<section class="sec">
+  <div class="wrap">
+    {% include "partials/service-cards.njk" %}
+    <p class="note-line">Not sure what you need? That's completely normal. <a href="/contact-us/">Get in touch</a> and we'll work it out together.</p>
+  </div>
+</section>
+{% include "partials/cta.njk" %}

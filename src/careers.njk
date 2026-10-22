@@ -1,0 +1,83 @@
+---
+layout: layouts/base.njk
+permalink: /careers/
+title: Careers
+seo_title: Support Worker Jobs in Logan, Wollongong & Ulladulla | Every Human
+seo_description: Join a family owned NDIS and aged care provider. We're looking for kind, reliable support workers in Logan, Wollongong and Ulladulla.
+---
+{%- from "partials/icons.njk" import icon -%}
+<section class="page-hd">
+  <div class="wrap">
+    <h1>Work with us</h1>
+    <p class="lead">We're a family owned team, and we look after our people. If you're kind, reliable and love helping others live well, we'd love to hear from you.</p>
+  </div>
+</section>
+<section class="sec">
+  <div class="wrap two-col">
+    <div>
+      <h2 class="h-sm">Why Every Human</h2>
+      <ul class="values values-sm">
+        <li>{{ icon("check") }}<div><h3>Real people, not a number</h3><p>Small, friendly office team who know your name and pick up the phone.</p></div></li>
+        <li>{{ icon("check") }}<div><h3>Matched clients</h3><p>We match you with clients you'll click with, so the work feels meaningful.</p></div></li>
+        <li>{{ icon("check") }}<div><h3>Local work</h3><p>Shifts close to home in Logan, Wollongong and Ulladulla.</p></div></li>
+      </ul>
+    </div>
+    <div>
+      <h2 class="h-sm">What you'll need</h2>
+      <ul class="ticks">
+        <li>{{ icon("check") }} NDIS Worker Screening Check</li>
+        <li>{{ icon("check") }} Working With Children Check</li>
+        <li>{{ icon("check") }} Current First Aid and CPR</li>
+        <li>{{ icon("check") }} Driver licence and a registered, insured car</li>
+        <li>{{ icon("check") }} A Certificate III or IV in Individual Support or Disability, or relevant experience</li>
+      </ul>
+      <p class="form-note">Don't have everything yet? Apply anyway and tell us what you're working on.</p>
+    </div>
+  </div>
+</section>
+<section class="sec sec-soft" id="apply">
+  <div class="wrap narrow">
+    <form class="form" name="careers" method="POST" action="/thanks/" data-netlify="true" netlify-honeypot="bot-field" enctype="multipart/form-data">
+      <h2>Apply now</h2>
+      <input type="hidden" name="form-name" value="careers">
+      <p class="hp" aria-hidden="true"><label>Don't fill this out if you're human: <input name="bot-field" tabindex="-1" autocomplete="new-password"></label></p>
+      <div class="field"><label for="c-name">Your name</label><input id="c-name" name="name" autocomplete="name" required></div>
+      <div class="field-row">
+        <div class="field"><label for="c-phone">Phone</label><input id="c-phone" name="phone" type="tel" autocomplete="tel" required></div>
+        <div class="field"><label for="c-email">Email</label><input id="c-email" name="email" type="email" autocomplete="email" required></div>
+      </div>
+      <div class="field-row">
+        <div class="field"><label for="c-suburb">Suburb</label><input id="c-suburb" name="suburb" required></div>
+        <div class="field">
+          <label for="c-location">Location you'd like to work in</label>
+          <select id="c-location" name="location" required>
+            <option value="">Choose one</option>
+            {%- for l in collections.locations %}<option>{{ l.data.area }}</option>{% endfor %}
+          </select>
+        </div>
+      </div>
+      <div class="field">
+        <p class="label">Checks and tickets you have now <span class="opt">(tick any)</span></p>
+        <div class="checks">
+          <label class="check"><input type="checkbox" name="checks[]" value="NDIS Worker Screening"> NDIS Worker Screening</label>
+          <label class="check"><input type="checkbox" name="checks[]" value="Working With Children Check"> Working With Children</label>
+          <label class="check"><input type="checkbox" name="checks[]" value="First Aid and CPR"> First Aid and CPR</label>
+          <label class="check"><input type="checkbox" name="checks[]" value="Driver licence and car"> Licence and car</label>
+          <label class="check"><input type="checkbox" name="checks[]" value="Cert III or IV"> Cert III or IV</label>
+        </div>
+      </div>
+      <div class="field">
+        <p class="label">When are you available? <span class="opt">(tick any)</span></p>
+        <div class="checks">
+          <label class="check"><input type="checkbox" name="availability[]" value="Weekdays"> Weekdays</label>
+          <label class="check"><input type="checkbox" name="availability[]" value="Evenings"> Evenings</label>
+          <label class="check"><input type="checkbox" name="availability[]" value="Weekends"> Weekends</label>
+          <label class="check"><input type="checkbox" name="availability[]" value="Overnight"> Overnight</label>
+        </div>
+      </div>
+      <div class="field"><label for="c-resume">Your resume <span class="opt">(PDF or Word, under 8 MB)</span></label><input id="c-resume" name="resume" type="file" accept=".pdf,.doc,.docx"></div>
+      <div class="field"><label for="c-msg">Tell us a little about yourself <span class="opt">(optional)</span></label><textarea id="c-msg" name="message" rows="4"></textarea></div>
+      <button class="btn btn-go" type="submit">Send application</button>
+    </form>
+  </div>
+</section>

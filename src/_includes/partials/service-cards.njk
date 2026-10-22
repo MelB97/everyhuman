@@ -1,0 +1,11 @@
+{%- from "partials/icons.njk" import icon -%}
+<ul class="cards svc-cards">
+  {%- for s in collections.services %}
+  <li class="card">
+    <span class="card-ico ico-{{ loop.index0 % 4 }}">{{ icon(s.data.icon) }}</span>
+    <h3><a class="card-link" href="{{ s.url }}">{{ s.data.title }}</a></h3>
+    <p>{{ s.data.summary }}</p>
+    <p class="tags">{% for f in s.data.funding %}<span>{{ f }}</span>{% endfor %}</p>
+  </li>
+  {%- endfor %}
+</ul>

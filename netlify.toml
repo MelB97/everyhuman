@@ -1,0 +1,28 @@
+# Netlify reads this file automatically: it builds the site and publishes the _site folder.
+[build]
+  command = "npm run build"
+  publish = "_site"
+
+[build.environment]
+  NODE_VERSION = "22"
+
+# Old page addresses from the previous website, sent to their new homes.
+[[redirects]]
+  from = "/blank"
+  to = "/our-team/"
+  status = 301
+
+# Keep the staff request page out of Google.
+[[headers]]
+  for = "/staff/*"
+  [headers.values]
+    X-Robots-Tag = "noindex, nofollow"
+
+[[headers]]
+  for = "/img/*"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+[[headers]]
+  for = "/fonts/*"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"

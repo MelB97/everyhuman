@@ -1,0 +1,15 @@
+---
+layout: layouts/base.njk
+permalink: /thanks/
+title: Thanks
+noindex: true
+eleventyExcludeFromCollections: true
+---
+{%- set callable = site.phone | hasPhone -%}
+<section class="page-hd page-hd-tall">
+  <div class="wrap">
+    <h1>Thanks, we've got it</h1>
+    <p class="lead">{{ site.response_time }}{% if callable %} If you'd rather talk now, call us on <a href="{{ site.phone | telLink }}">{{ site.phone }}</a>.{% endif %}</p>
+    <div class="btns"><a class="btn btn-go" href="/">Back to the homepage</a><a class="btn btn-line" href="/services/">See our services</a></div>
+  </div>
+</section>

@@ -1,0 +1,29 @@
+---
+layout: layouts/base.njk
+permalink: /locations/
+title: Locations
+seo_title: Where We Support People | Every Human Support Services
+seo_description: Every Human Support Services supports people in Logan, Queensland, and in Wollongong and Ulladulla on the NSW South Coast.
+---
+{%- from "partials/icons.njk" import icon -%}
+<section class="page-hd">
+  <div class="wrap">
+    <h1>Where we support people</h1>
+    <p class="lead">{{ home.locations_intro }} We come to you, at home and out in the community.</p>
+  </div>
+</section>
+<section class="sec">
+  <div class="wrap">
+    <ul class="cards locs">
+      {%- for l in collections.locations %}
+      <li class="card loc-card">
+        <p class="loc-state">{{ l.data.region }}, {{ l.data.state }}</p>
+        <h2 class="h-sm"><a class="card-link" href="{{ l.url }}">{{ l.data.title }}</a></h2>
+        <p>{{ l.data.summary }}</p>
+      </li>
+      {%- endfor %}
+    </ul>
+    <p class="note-line">{{ icon("phone") }} One number for every location. When you call, press 1 for New South Wales or 2 for Queensland.</p>
+  </div>
+</section>
+{% include "partials/cta.njk" %}

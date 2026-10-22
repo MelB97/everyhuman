@@ -1,0 +1,86 @@
+---
+layout: layouts/base.njk
+permalink: /staff/team-update/
+title: Team update request
+noindex: true
+eleventyExcludeFromCollections: true
+---
+{%- from "partials/icons.njk" import icon -%}
+<section class="page-hd page-hd-staff">
+  <div class="wrap">
+    <p class="crumb">Staff only</p>
+    <h1>Website update request</h1>
+    <p class="lead">Use this form to add someone to the Our Team page, take someone off, change their details, or ask for any other website change. Nothing goes live until Mel or Kaileigh has checked it.</p>
+  </div>
+</section>
+<section class="sec">
+  <div class="wrap narrow">
+    <form class="form" name="team-update" method="POST" action="/staff/thanks/" data-netlify="true" netlify-honeypot="bot-field" enctype="multipart/form-data" data-team-form>
+      <input type="hidden" name="form-name" value="team-update">
+      <p class="hp" aria-hidden="true"><label>Don't fill this out if you're human: <input name="bot-field" tabindex="-1" autocomplete="new-password"></label></p>
+
+      <div class="field"><label for="t-from">Your name</label><input id="t-from" name="requested_by" autocomplete="name" required></div>
+
+      <fieldset class="choice">
+        <legend>What do you need?</legend>
+        <label class="choice-btn"><input type="radio" name="request" value="Add a new team member" required> <span><strong>Add someone</strong>A new person for the team page</span></label>
+        <label class="choice-btn"><input type="radio" name="request" value="Remove a team member"> <span><strong>Remove someone</strong>They've left or don't want to be shown</span></label>
+        <label class="choice-btn"><input type="radio" name="request" value="Update a team member"> <span><strong>Change details</strong>New photo, job title or location</span></label>
+        <label class="choice-btn"><input type="radio" name="request" value="Other website change"> <span><strong>Something else</strong>Any other change to the website</span></label>
+      </fieldset>
+
+      <div data-part="person" hidden>
+        <div class="field"><label for="t-name">Their name, as it should appear</label><input id="t-name" name="person_name" placeholder="e.g. Sarah M"><p class="hint">First name and last initial is fine.</p></div>
+      </div>
+
+      <div data-part="details" hidden>
+        <div class="field-row">
+          <div class="field">
+            <label for="t-title">Job title</label>
+            <select id="t-title" name="job_title">
+              <option value="">Choose one</option>
+              <option>Support Worker</option>
+              <option>Senior Support Worker</option>
+              <option>Team Leader</option>
+              <option>Office team</option>
+              <option>Other (say below)</option>
+            </select>
+          </div>
+          <div class="field">
+            <label for="t-loc">Location</label>
+            <select id="t-loc" name="person_location">
+              <option value="">Choose one</option>
+              {%- for l in collections.locations %}<option>{{ l.data.team_location }}</option>{% endfor %}
+              <option>All locations</option>
+            </select>
+          </div>
+        </div>
+        <div class="field">
+          <label for="t-photo">Photo <span class="opt">(optional)</span></label>
+          <input id="t-photo" name="photo" type="file" accept="image/*">
+          <p class="hint">A friendly, clear photo of their face. Phone photos are fine.</p>
+        </div>
+        <div class="field"><label for="t-about">A little about them <span class="opt">(optional, one or two sentences)</span></label><textarea id="t-about" name="about" rows="3" maxlength="220" placeholder="e.g. Loves the beach, footy and a good cuppa."></textarea></div>
+        <label class="check check-consent" data-part="consent"><input type="checkbox" name="consent" value="Yes"> They've said they're happy to be on the website with this photo and information.</label>
+      </div>
+
+      <div data-part="leaving" hidden>
+        <div class="field"><label for="t-last">Their last day <span class="opt">(optional)</span></label><input id="t-last" name="last_day" type="date"></div>
+      </div>
+
+      <div data-part="other" hidden>
+        <div class="field"><label for="t-page">Which page?</label>
+          <select id="t-page" name="page">
+            <option value="">Choose one</option>
+            <option>Home</option><option>Services</option><option>Locations</option><option>Our team</option>
+            <option>Referrals</option><option>Careers</option><option>Contact</option><option>Not sure</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="field" data-part="notes" hidden><label for="t-notes">Anything else? <span class="opt" data-notes-opt>(optional)</span></label><textarea id="t-notes" name="notes" rows="4" placeholder="Describe the change in your own words."></textarea></div>
+
+      <button class="btn btn-go" type="submit" data-part="submit" hidden>Send request</button>
+    </form>
+  </div>
+</section>
