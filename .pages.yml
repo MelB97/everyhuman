@@ -86,6 +86,7 @@ content:
       - { name: facebook, label: "Facebook page link (optional)", type: string }
       - { name: logo, label: "Logo (a PNG with a clear background works best)", type: image, options: { media: images } }
       - { name: ndis_badge, label: "NDIS badge", type: image, options: { media: images } }
+      - { name: referral_form_script, label: "Astalty referral form link (the src from the embed code)", type: string }
       - { name: response_time, label: "Message after a form is sent", type: string }
       - { name: clothing_note, label: "Note for people looking for the clothing company", type: text }
       - { name: clothing_link, label: "Clothing company's website", type: string }

@@ -23,80 +23,16 @@ seo_description: Support coordinators, plan managers and LACs can refer particip
         <li>We keep you updated as supports begin.</li>
       </ol>
       <div class="side-photo">{% img photos.referrals.image, photos.referrals.alt, "(max-width: 960px) 92vw, 420px" %}</div>
-      <p class="form-note">Registered NDIS provider. We accept agency, plan and self-managed participants, plus My Aged Care and private clients.</p>
+      <p class="form-note">Registered NDIS provider. We accept agency, plan and self-managed participants, plus aged care clients through brokerage and private clients.</p>
     </div>
-    <form class="form" name="referral" method="POST" action="/thanks/" data-netlify="true" netlify-honeypot="bot-field">
-      <input type="hidden" name="form-name" value="referral">
-      <p class="hp" aria-hidden="true"><label>Don't fill this out if you're human: <input name="bot-field" tabindex="-1" autocomplete="new-password"></label></p>
-
-      <fieldset>
-        <legend>Your details</legend>
-        <div class="field-row">
-          <div class="field"><label for="r-name">Your name</label><input id="r-name" name="referrer_name" autocomplete="name" required></div>
-          <div class="field">
-            <label for="r-role">You are a</label>
-            <select id="r-role" name="referrer_role" required>
-              <option value="">Choose one</option>
-              <option>Support coordinator</option>
-              <option>Plan manager</option>
-              <option>Local area coordinator (LAC)</option>
-              <option>Health or allied health professional</option>
-              <option>Family member or carer</option>
-              <option>Other</option>
-            </select>
-          </div>
-        </div>
-        <div class="field"><label for="r-org">Organisation <span class="opt">(optional)</span></label><input id="r-org" name="referrer_org" autocomplete="organization"></div>
-        <div class="field-row">
-          <div class="field"><label for="r-phone">Phone</label><input id="r-phone" name="referrer_phone" type="tel" autocomplete="tel" required></div>
-          <div class="field"><label for="r-email">Email</label><input id="r-email" name="referrer_email" type="email" autocomplete="email" required></div>
-        </div>
-      </fieldset>
-
-      <fieldset>
-        <legend>Who you're referring</legend>
-        <div class="field-row">
-          <div class="field"><label for="p-name">Their name</label><input id="p-name" name="participant_name" required></div>
-          <div class="field"><label for="p-phone">Their phone or their nominee's <span class="opt">(optional)</span></label><input id="p-phone" name="participant_phone" type="tel"></div>
-        </div>
-        <div class="field-row">
-          <div class="field"><label for="p-suburb">Suburb</label><input id="p-suburb" name="participant_suburb" required></div>
-          <div class="field">
-            <label for="p-location">Nearest location</label>
-            <select id="p-location" name="location" required>
-              <option value="">Choose one</option>
-              {%- for l in collections.locations %}<option>{{ l.data.area }}</option>{% endfor %}
-              <option>Somewhere else</option>
-            </select>
-          </div>
-        </div>
-        <div class="field">
-          <label for="p-funding">Funding</label>
-          <select id="p-funding" name="funding" required>
-            <option value="">Choose one</option>
-            <option>NDIS, agency managed</option>
-            <option>NDIS, plan managed</option>
-            <option>NDIS, self managed</option>
-            <option>Aged care (My Aged Care)</option>
-            <option>Private</option>
-            <option>Not sure yet</option>
-          </select>
-        </div>
-        <div class="field">
-          <p class="label">Supports needed <span class="opt">(tick any)</span></p>
-          <div class="checks">
-            {%- for s in collections.services %}
-            <label class="check"><input type="checkbox" name="supports[]" value="{{ s.data.nav_title }}"> {{ s.data.nav_title }}</label>
-            {%- endfor %}
-            <label class="check"><input type="checkbox" name="supports[]" value="Not sure"> Not sure</label>
-          </div>
-        </div>
-        <div class="field"><label for="p-notes">Anything we should know? <span class="opt">(optional)</span></label><textarea id="p-notes" name="notes" rows="4" placeholder="Goals, preferred days and times, preferences for support workers…"></textarea></div>
-      </fieldset>
-
-      <label class="check check-consent"><input type="checkbox" name="consent" value="Yes" required> The person being referred (or their nominee) has agreed to this referral and to Every Human contacting them.</label>
-      <p class="form-note">Please don't attach NDIS plans or medical reports here. We'll request them securely once we've made contact. See our <a href="/privacy-policy/">privacy policy</a>.</p>
-      <button class="btn btn-go" type="submit">Send referral</button>
-    </form>
+    <div class="form embed-card">
+      <h2>Referral form</h2>
+      <p class="form-note embed-note">Your referral goes straight into our secure client system.</p>
+      <div class="embed-frame">
+        {#- Astalty referral form. Paste a new code here if Astalty ever changes it. -#}
+        <script type="text/javascript" src="{{ site.referral_form_script }}"></script>
+        <noscript><p>Our referral form needs JavaScript. Please email <a href="mailto:{{ site.email }}">{{ site.email }}</a> instead.</p></noscript>
+      </div>
+    </div>
   </div>
 </section>

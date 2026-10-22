@@ -145,12 +145,19 @@ p{margin:0 0 1em}
 .card-link:hover{color:var(--coral-ink)}
 .card-ico{display:inline-grid;place-items:center;width:56px;height:56px;border-radius:18px;margin-bottom:16px}
 .card-photo{padding:0;overflow:hidden;display:flex;flex-direction:column}
-.card-img{position:relative;aspect-ratio:4/3;background:var(--sand)}
+.card-img{position:relative;aspect-ratio:4/3;background:var(--sand);flex:none}
+.card-img picture{position:absolute;inset:0;display:block}
+.card-img img{position:absolute;inset:0}
 .card-img picture,.card-img img{width:100%;height:100%}
 .card-img img{object-fit:cover;object-position:center 30%}
 .card-img .card-ico{position:absolute;left:20px;bottom:-26px;margin:0;box-shadow:0 0 0 5px #fff}
-.card-body{padding:24px 26px 26px}
+.card-body{padding:24px 26px 26px;flex:1;display:flex;flex-direction:column}
+.card-body .tags{margin-top:auto;padding-top:6px}
 .svc-cards .card-body{padding-top:40px}
+.svc-cards{display:flex;flex-wrap:wrap;justify-content:center;align-items:stretch;gap:18px}
+.svc-cards>li{flex:0 0 calc((100% - 54px)/4)}
+.svc-cards .card-img .card-ico{display:none}
+.svc-cards .card-body{padding-top:22px}
 .card-ico .ico{width:28px;height:28px}
 .ico-0{background:var(--teal-lt);color:var(--teal)}
 .ico-1{background:var(--coral-lt);color:var(--coral-ink)}
@@ -233,7 +240,8 @@ p{margin:0 0 1em}
 .hd-photo picture,.hd-photo img,.story-photo picture,.story-photo img,.side-photo picture,.side-photo img{width:100%;height:100%}
 .hd-photo img,.story-photo img,.side-photo img{object-fit:cover}
 .story-photo{border-radius:28px 120px 28px 28px;overflow:hidden;aspect-ratio:4/5;background:var(--sand)}
-.side-photo{border-radius:var(--r);overflow:hidden;aspect-ratio:4/3;margin-top:22px;background:var(--sand)}
+.side-photo{border-radius:var(--r);overflow:hidden;aspect-ratio:4/3;margin:22px 0 14px;background:var(--sand);position:relative}
+.side-photo picture{position:absolute;inset:0}
 .story-rev{grid-template-columns:.7fr 1.3fr;align-items:center}
 .story-video video{display:block;width:100%;max-width:340px;aspect-ratio:9/16;object-fit:cover;border-radius:var(--r);background:#1d2b14}
 .sec-warm .values-sm p{color:#d6e3c8}
@@ -329,6 +337,10 @@ select{appearance:none;background-image:url("data:image/svg+xml,%3Csvg xmlns='ht
 .tip-stop .ico{color:#8a5a00}
 .form-note{font-size:.98rem;color:var(--ink-2)}
 .form .btn{width:100%}
+.embed-card{padding-bottom:12px}
+.embed-note{margin-top:-.4em}
+.embed-frame{margin:18px -10px 0;border-radius:16px;overflow:hidden;background:#fff;min-height:400px}
+.embed-frame iframe{display:block;width:100%!important;min-width:100%;border:0}
 [hidden]{display:none!important}
 
 /* Footer */
@@ -377,6 +389,7 @@ select{appearance:none;background-image:url("data:image/svg+xml,%3Csvg xmlns='ht
   .hd-photo{max-width:560px}
   .story-video video{margin-inline:auto}
   .path-list{grid-template-columns:1fr}
+  .svc-cards>li{flex-basis:calc((100% - 18px)/2)}
   .steps{grid-template-columns:1fr 1fr}
   .svc-side{position:static}
   .ftr-grid{grid-template-columns:1fr 1fr}
@@ -396,6 +409,7 @@ select{appearance:none;background-image:url("data:image/svg+xml,%3Csvg xmlns='ht
   .moments li:nth-child(even){margin-top:0}
   .hero-call{margin-left:0;padding-left:0;border-left:0;width:100%}
   .steps,.values,.field-row,.choice{grid-template-columns:1fr}
+  .svc-cards>li{flex-basis:100%}
   .team{grid-template-columns:1fr 1fr;gap:14px}
   .person{padding:16px 10px}
   .person-pic{width:96px;height:96px;font-size:1.9rem}
@@ -407,3 +421,6 @@ select{appearance:none;background-image:url("data:image/svg+xml,%3Csvg xmlns='ht
   .btns .btn{flex:1 1 100%}
 }
 @media (prefers-reduced-motion:reduce){*{scroll-behavior:auto!important;transition:none!important}}
+/* Service boxes: every box the same height, whichever row it's in */
+@media (min-width:961px){.svc-cards{display:grid;grid-template-columns:repeat(8,1fr);grid-auto-rows:1fr}.svc-cards>li{grid-column:span 2}.svc-cards>li:nth-child(5){grid-column:2/span 2}}
+@media (min-width:641px) and (max-width:960px){.svc-cards{display:grid;grid-template-columns:repeat(4,1fr);grid-auto-rows:1fr}.svc-cards>li{grid-column:span 2}.svc-cards>li:last-child:nth-child(odd){grid-column:2/span 2}}
