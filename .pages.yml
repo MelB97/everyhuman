@@ -1,9 +1,17 @@
 # Settings for the website editor (Pages CMS). Each entry below is a section in the editor.
 media:
-  input: src/images/uploads
-  output: /images/uploads
-  rename: safe
-  categories: [image]
+  - name: images
+    label: Photos
+    input: src/images/uploads
+    output: /images/uploads
+    rename: safe
+    categories: [image]
+  - name: videos
+    label: Videos
+    input: src/videos
+    output: /videos
+    rename: safe
+    categories: [video, image]
 
 content:
   # ── Our team ── one entry per person. Add, edit or delete people here.
@@ -46,6 +54,7 @@ content:
       - name: photo
         label: "Photo (optional)"
         type: image
+        options: { media: images }
         description: "A clear, friendly photo of their face. If you leave this empty, their initials are shown instead."
       - name: bio
         label: "A little about them (optional)"
@@ -75,7 +84,8 @@ content:
       - { name: accounts_email, label: "Accounts email", type: string }
       - { name: hours, label: "Office hours (optional)", type: string }
       - { name: facebook, label: "Facebook page link (optional)", type: string }
-      - { name: logo, label: "Logo (optional, a PNG with a clear background or an SVG works best)", type: image }
+      - { name: logo, label: "Logo (a PNG with a clear background works best)", type: image, options: { media: images } }
+      - { name: ndis_badge, label: "NDIS badge", type: image, options: { media: images } }
       - { name: response_time, label: "Message after a form is sent", type: string }
       - { name: clothing_note, label: "Note for people looking for the clothing company", type: text }
       - { name: clothing_link, label: "Clothing company's website", type: string }
@@ -93,6 +103,13 @@ content:
       - { name: h1, label: "Main heading", type: string }
       - { name: h1_highlight, label: "Highlighted word at the end of the heading", type: string }
       - { name: intro, label: "Intro text", type: text }
+      - name: hero_photos
+        label: "Top photos (the honeycomb, first one is the big centre photo, up to 5)"
+        type: object
+        list: true
+        fields:
+          - { name: image, label: Photo, type: image, options: { media: images } }
+          - { name: alt, label: "Describe the photo (for people using screen readers)", type: string }
       - name: paths
         label: "The three 'I'm…' boxes"
         type: object
@@ -104,6 +121,17 @@ content:
           - { name: link, label: "Link to", type: string }
       - { name: services_heading, label: "Services heading", type: string }
       - { name: services_intro, label: "Services intro", type: text }
+      - { name: stories_heading, label: "Video stories heading", type: string }
+      - { name: stories_intro, label: "Video stories intro", type: text }
+      - name: stories
+        label: "Video stories"
+        type: object
+        list: true
+        fields:
+          - { name: name, label: "Title, e.g. Meet Brandon", type: string }
+          - { name: label, label: "Client or Support worker", type: string }
+          - { name: video, label: "Video (MP4, keep it under about 20 MB)", type: file, options: { media: videos } }
+          - { name: poster, label: "Cover image (shown before it plays)", type: image, options: { media: videos } }
       - { name: steps_heading, label: "Getting started heading", type: string }
       - name: steps
         label: "Getting started steps"
@@ -130,6 +158,15 @@ content:
           - { name: text, label: Text, type: text }
       - { name: locations_heading, label: "Locations heading", type: string }
       - { name: locations_intro, label: "Locations intro", type: text }
+      - { name: moments_heading, label: "Everyday moments heading", type: string }
+      - { name: moments_intro, label: "Everyday moments intro", type: text }
+      - name: moments
+        label: "Everyday moments photos"
+        type: object
+        list: true
+        fields:
+          - { name: image, label: Photo, type: image, options: { media: images } }
+          - { name: alt, label: "Describe the photo (for people using screen readers)", type: string }
       - { name: team_heading, label: "Team heading", type: string }
       - { name: team_intro, label: "Team intro", type: text }
       - { name: cta_heading, label: "Bottom banner heading", type: string }
@@ -148,11 +185,41 @@ content:
       - { name: intro, label: Intro, type: text }
       - { name: story_heading, label: "Story heading", type: string }
       - { name: story_text, label: Story, type: text }
+      - { name: photo, label: "Photo beside the story", type: image, options: { media: images } }
+      - { name: photo_alt, label: "Describe the photo", type: string }
+      - { name: video, label: "Video", type: file, options: { media: videos } }
+      - { name: video_poster, label: "Video cover image", type: image, options: { media: videos } }
       - { name: child_safe, label: "Child safe statement", type: text }
       - { name: office_heading, label: "Office team heading", type: string }
       - { name: office_intro, label: "Office team intro", type: text }
       - { name: support_heading, label: "Support team heading", type: string }
       - { name: support_intro, label: "Support team intro", type: text }
+
+  # ── Photos on other pages ──
+  - name: photos
+    label: "Photos on other pages"
+    type: file
+    path: src/_data/photos.json
+    format: json
+    fields:
+      - name: careers
+        label: "Careers page"
+        type: object
+        fields:
+          - { name: image, label: Photo, type: image, options: { media: images } }
+          - { name: alt, label: "Describe the photo", type: string }
+      - name: referrals
+        label: "Referrals page"
+        type: object
+        fields:
+          - { name: image, label: Photo, type: image, options: { media: images } }
+          - { name: alt, label: "Describe the photo", type: string }
+      - name: contact
+        label: "Contact page"
+        type: object
+        fields:
+          - { name: image, label: Photo, type: image, options: { media: images } }
+          - { name: alt, label: "Describe the photo", type: string }
 
   # ── Services ──
   - name: services
@@ -175,6 +242,8 @@ content:
           values: [personal, community, skills, home, transport, transitions, aged]
       - { name: summary, label: "Short summary (used in lists)", type: text }
       - { name: lead, label: "Intro under the heading", type: text }
+      - { name: image, label: "Photo", type: image, options: { media: images } }
+      - { name: image_alt, label: "Describe the photo", type: string }
       - name: funding
         label: "Funding types"
         type: select
@@ -202,6 +271,8 @@ content:
       - { name: order, label: "Order in lists", type: number }
       - { name: team_location, label: "Team location label (must match the team list)", type: string }
       - { name: area, label: "Area we cover", type: string }
+      - { name: image, label: "Photo", type: image, options: { media: images } }
+      - { name: image_alt, label: "Describe the photo", type: string }
       - { name: summary, label: "Short summary (used in lists)", type: text }
       - { name: lead, label: "Intro under the heading", type: text }
       - { name: seo_title, label: "Google title", type: string }

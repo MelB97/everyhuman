@@ -9,5 +9,9 @@
   "office_heading": "Our office team",
   "office_intro": "The people who answer your calls, build your rosters and keep everything running smoothly.",
   "support_heading": "Our support team",
-  "support_intro": "The people who'll be by your side, at home and out in the community."
+  "support_intro": "The people who'll be by your side, at home and out in the community.",
+  "photo": "/images/uploads/team-staff.jpg",
+  "photo_alt": "Two of our team at a community expo",
+  "video": "/videos/our-community.mp4",
+  "video_poster": "/videos/our-community.jpg"
 }

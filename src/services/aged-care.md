@@ -8,6 +8,8 @@ lead: Staying at home, staying connected and staying you. We're here to help wit
 funding: [Aged care, Private]
 seo_title: Aged Care Support at Home | Every Human Support Services
 seo_description: In-home aged care support in Logan, Wollongong and Ulladulla, including personal care, household help, transport and social outings, through My Aged Care or privately.
+image: /images/uploads/service-aged-care.jpg
+image_alt: A support worker and an older client enjoying a drink together
 ---
 ## How we can help
 

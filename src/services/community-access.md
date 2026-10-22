@@ -8,6 +8,8 @@ lead: Life is better with people around you. We'll help you get out, try new thi
 funding: [NDIS, Aged care, Private]
 seo_title: Community Access & Social Support | Every Human Support Services
 seo_description: Community participation and social outings with a friendly support worker. Shopping, hobbies, sport, events, classes and catching up with friends.
+image: /images/uploads/service-waterfall.jpg
+image_alt: A group of clients and support workers at a waterfall
 ---
 Whether it's a coffee down the road, a weekly class or finally trying that hobby, your support worker is there to make it happen and make it fun.
 

@@ -12,6 +12,7 @@ eleventyComputed:
     <p class="lead">{{ about.intro }}</p>
   </div>
 </section>
+{%- from "partials/icons.njk" import icon -%}
 <section class="sec">
   <div class="wrap story">
     <div class="prose">
@@ -19,12 +20,24 @@ eleventyComputed:
       <p>{{ about.story_text }}</p>
       <p>{{ about.child_safe }}</p>
     </div>
-    <ul class="values values-sm">
-      {%- from "partials/icons.njk" import icon -%}
-      {%- for v in home.values %}
-      <li>{{ icon("check") }}<div><h3>{{ v.title }}</h3><p>{{ v.text }}</p></div></li>
-      {%- endfor %}
-    </ul>
+    <div class="story-photo">{% img about.photo, about.photo_alt, "(max-width: 960px) 92vw, 440px" %}</div>
+  </div>
+</section>
+<section class="sec sec-warm">
+  <div class="wrap story story-rev">
+    <div class="story-video">
+      <video controls playsinline preload="none" poster="{{ about.video_poster }}" aria-label="A short video of everyday moments at Every Human">
+        <source src="{{ about.video }}" type="video/mp4">
+      </video>
+    </div>
+    <div>
+      <h2>{{ home.values_heading }}</h2>
+      <ul class="values values-sm">
+        {%- for v in home.values %}
+        <li>{{ icon("check") }}<div><h3>{{ v.title }}</h3><p>{{ v.text }}</p></div></li>
+        {%- endfor %}
+      </ul>
+    </div>
   </div>
 </section>
 {%- set office = [] -%}{%- set support = [] -%}

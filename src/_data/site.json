@@ -5,16 +5,17 @@
   "abn": "97652447544",
   "url": "https://www.everyhuman.net.au",
   "tagline": "In-home and community support",
-  "phone": "1800 XXX XXX",
+  "phone": "1800 705 930",
   "phone_note": "Press 1 for New South Wales or 2 for Queensland.",
   "email": "admin@everyhuman.net.au",
   "accounts_email": "accounts@everyhuman.net.au",
   "hours": "",
   "facebook": "",
-  "logo": "",
+  "logo": "/images/brand/logo.png",
   "head_office": "Port Kembla NSW 2505",
   "response_time": "We'll get back to you within one business day.",
   "clothing_note": "Looking for EveryHuman adaptive clothing or footwear? That's a different business with a similar name, so we can't help with orders, returns or deliveries. Please contact them through their website.",
   "clothing_link": "https://everyhuman.com.au",
-  "ndis_registered": true
+  "ndis_registered": true,
+  "ndis_badge": "/images/brand/ndis-registered-provider.png"
 }

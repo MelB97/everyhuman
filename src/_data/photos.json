@@ -1,0 +1,14 @@
+{
+  "careers": {
+    "image": "/images/uploads/careers-beach-workout.jpg",
+    "alt": "A support worker with a client at an outdoor gym by the beach"
+  },
+  "referrals": {
+    "image": "/images/uploads/referrals-expo.jpg",
+    "alt": "Our team at a provider expo"
+  },
+  "contact": {
+    "image": "/images/uploads/contact-selfie.jpg",
+    "alt": "A support worker and client smiling together"
+  }
+}

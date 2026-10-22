@@ -20,27 +20,13 @@ eleventyComputed:
       </div>
       <p class="hero-where">{{ icon("pin") }} {% for l in collections.locations %}<a href="{{ l.url }}">{{ l.data.title }}</a>{% if not loop.last %}<span aria-hidden="true"> · </span>{% endif %}{% endfor %}{% if callable %}<span class="hero-call"> {{ icon("phone") }} <a href="{{ site.phone | telLink }}">{{ site.phone }}</a></span>{% endif %}</p>
     </div>
-    <div class="hero-art" aria-hidden="true">
-      <svg viewBox="0 0 440 400" width="440" height="400">
-        <circle cx="220" cy="210" r="178" fill="#f6e6d4"/>
-        <circle cx="330" cy="92" r="26" fill="#f2b84b"/>
-        <circle cx="86" cy="118" r="10" fill="#e9a9a0"/>
-        <circle cx="372" cy="300" r="8" fill="#1f4d4a" opacity=".5"/>
-        <!-- person left -->
-        <path d="M70 360c0-62 30-112 78-112s78 50 78 112z" fill="#1f4d4a"/>
-        <circle cx="148" cy="196" r="38" fill="#c98a63"/>
-        <!-- person right -->
-        <path d="M214 360c0-70 34-126 86-126s86 56 86 126z" fill="#e07a4f"/>
-        <circle cx="300" cy="180" r="42" fill="#8a5a3c"/>
-        <!-- person middle (in front) -->
-        <path d="M140 372c0-56 34-100 80-100s80 44 80 100z" fill="#f2b84b"/>
-        <circle cx="220" cy="228" r="34" fill="#e8b48f"/>
-        <!-- linked arms -->
-        <path d="M196 318c-18 4-36 2-52-8" stroke="#1f4d4a" stroke-width="16" stroke-linecap="round" fill="none"/>
-        <path d="M244 318c18 4 36 2 52-8" stroke="#e07a4f" stroke-width="16" stroke-linecap="round" fill="none"/>
-        <!-- heart -->
-        <path d="M220 152s-17-10-17-23a9 9 0 0 1 17-5 9 9 0 0 1 17 5c0 13-17 23-17 23z" fill="#e07a4f"/>
-      </svg>
+    <div class="hero-art">
+      <ul class="hex-cluster">
+        {%- for h in home.hero_photos | limit(5) %}
+        <li class="hex hex-{{ loop.index }}">{% img h.image, h.alt, ("(max-width: 960px) 60vw, 360px" if loop.first else "(max-width: 960px) 30vw, 180px"), "", loop.first %}</li>
+        {%- endfor %}
+      </ul>
+      {%- if site.ndis_registered %}<span class="hero-badge">{% logo site.ndis_badge, "Registered NDIS provider", "" %}</span>{% endif %}
     </div>
   </div>
 </section>
@@ -68,6 +54,19 @@ eleventyComputed:
     {% include "partials/service-cards.njk" %}
   </div>
 </section>
+
+{%- if home.stories.length %}
+<section class="sec sec-warm">
+  <div class="wrap">
+    <div class="sec-hd">
+      <h2>{{ home.stories_heading }}</h2>
+      <p class="lead">{{ home.stories_intro }}</p>
+    </div>
+    {%- set stories = home.stories %}
+    {% include "partials/stories.njk" %}
+  </div>
+</section>
+{%- endif %}
 
 <section class="sec sec-soft">
   <div class="wrap">
@@ -98,7 +97,7 @@ eleventyComputed:
   </div>
 </section>
 
-<section class="sec sec-warm">
+<section class="sec sec-soft">
   <div class="wrap values-in">
     <div>
       <h2>{{ home.values_heading }}</h2>
@@ -117,20 +116,28 @@ eleventyComputed:
       <h2>{{ home.locations_heading }}</h2>
       <p class="lead">{{ home.locations_intro }}</p>
     </div>
-    <ul class="cards locs">
-      {%- for l in collections.locations %}
-      <li class="card loc-card">
-        <p class="loc-state">{{ l.data.region }}, {{ l.data.state }}</p>
-        <h3><a class="card-link" href="{{ l.url }}">{{ l.data.title }}</a></h3>
-        <p>{{ l.data.summary }}</p>
-      </li>
-      {%- endfor %}
-    </ul>
+    {% include "partials/location-cards.njk" %}
   </div>
 </section>
 
+{%- if home.moments.length %}
+<section class="sec sec-soft moments-sec">
+  <div class="wrap">
+    <div class="sec-hd">
+      <h2>{{ home.moments_heading }}</h2>
+      <p class="lead">{{ home.moments_intro }}</p>
+    </div>
+  </div>
+  <ul class="moments">
+    {%- for m in home.moments %}
+    <li>{% img m.image, m.alt, "(max-width: 640px) 60vw, 300px" %}</li>
+    {%- endfor %}
+  </ul>
+</section>
+{%- endif %}
+
 {%- if collections.team.length %}
-<section class="sec sec-soft">
+<section class="sec">
   <div class="wrap">
     <div class="sec-hd">
       <h2>{{ home.team_heading }}</h2>

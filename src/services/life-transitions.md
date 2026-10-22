@@ -8,6 +8,8 @@ lead: Big changes can be a lot. We'll help you plan, connect with the right supp
 funding: [NDIS, Private]
 seo_title: Life Transition Support | Every Human Support Services
 seo_description: Help coordinating supports and managing big life changes, such as moving home, leaving school, starting work or changes in health.
+image: /images/uploads/service-new-home.jpg
+image_alt: A client and support worker outside a new home
 ---
 ## Times we can help
 

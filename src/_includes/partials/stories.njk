@@ -1,0 +1,11 @@
+{#- Video stories. Set `stories` before including. -#}
+<ul class="stories">
+  {%- for s in stories %}
+  <li class="story-card">
+    <video controls playsinline preload="none" poster="{{ s.poster }}" aria-label="{{ s.name }}, {{ s.label }}">
+      <source src="{{ s.video }}" type="video/mp4">
+    </video>
+    <p class="story-name"><strong>{{ s.name }}</strong><span>{{ s.label }}</span></p>
+  </li>
+  {%- endfor %}
+</ul>

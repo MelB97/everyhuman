@@ -5,35 +5,171 @@
   "h1": "Support that feels like",
   "h1_highlight": "community",
   "intro": "In-home and community support for NDIS participants, older Australians and private clients. We get to know you, match you with people you'll click with, and help you make the most of your funding.",
+  "hero_photos": [
+    {
+      "image": "/images/uploads/hero-park-stroll.jpg",
+      "alt": "A client in his wheelchair at the park with his support worker"
+    },
+    {
+      "image": "/images/uploads/hero-alpaca-selfie.jpg",
+      "alt": "A client and support worker feeding an alpaca"
+    },
+    {
+      "image": "/images/uploads/hero-lunch-out.jpg",
+      "alt": "A support worker and client sharing a laugh over lunch"
+    },
+    {
+      "image": "/images/uploads/hero-beach-picnic.jpg",
+      "alt": "A beach picnic with a support worker"
+    },
+    {
+      "image": "/images/uploads/hero-life-jackets.jpg",
+      "alt": "A client and support worker in life jackets, ready to head out on the water"
+    }
+  ],
   "paths": [
-    { "title": "I'm looking for support", "text": "For yourself or someone you care about. We'll talk it through with you, no pressure.", "link": "/contact-us/", "button": "Get started" },
-    { "title": "I'm referring someone", "text": "Support coordinators, plan managers and LACs: send a referral in a couple of minutes.", "link": "/referrals/", "button": "Make a referral" },
-    { "title": "I'd like to work with you", "text": "We're always keen to meet kind, reliable support workers in our areas.", "link": "/careers/", "button": "See careers" }
+    {
+      "title": "I'm looking for support",
+      "text": "For yourself or someone you care about. We'll talk it through with you, no pressure.",
+      "link": "/contact-us/",
+      "button": "Get started"
+    },
+    {
+      "title": "I'm referring someone",
+      "text": "Support coordinators, plan managers and LACs: send a referral in a couple of minutes.",
+      "link": "/referrals/",
+      "button": "Make a referral"
+    },
+    {
+      "title": "I'd like to work with you",
+      "text": "We're always keen to meet kind, reliable support workers in our areas.",
+      "link": "/careers/",
+      "button": "See careers"
+    }
   ],
   "services_heading": "How we can help",
   "services_intro": "Everyday support at home and out in the community, built around your goals, your routine and the things you love doing.",
+  "stories_heading": "Hear it from our community",
+  "stories_intro": "Real people, real stories. Tap to watch.",
+  "stories": [
+    {
+      "name": "Meet Brandon",
+      "label": "Client",
+      "video": "/videos/meet-brandon.mp4",
+      "poster": "/videos/meet-brandon.jpg"
+    },
+    {
+      "name": "Meet Michael",
+      "label": "Client",
+      "video": "/videos/meet-michael.mp4",
+      "poster": "/videos/meet-michael.jpg"
+    },
+    {
+      "name": "Meet Dee",
+      "label": "Support worker",
+      "video": "/videos/meet-dee.mp4",
+      "poster": "/videos/meet-dee.jpg"
+    }
+  ],
   "steps_heading": "Getting started is simple",
   "steps": [
-    { "title": "Get in touch", "text": "Call, send an enquiry, or ask your support coordinator to refer you." },
-    { "title": "Meet and greet", "text": "We come to you, have a cuppa and learn about your goals, routine and what matters to you." },
-    { "title": "We match your team", "text": "We pick support workers who suit your needs, personality and interests." },
-    { "title": "Support begins", "text": "We check in regularly and adjust things as your needs and goals change." }
+    {
+      "title": "Get in touch",
+      "text": "Call, send an enquiry, or ask your support coordinator to refer you."
+    },
+    {
+      "title": "Meet and greet",
+      "text": "We come to you, have a cuppa and learn about your goals, routine and what matters to you."
+    },
+    {
+      "title": "We match your team",
+      "text": "We pick support workers who suit your needs, personality and interests."
+    },
+    {
+      "title": "Support begins",
+      "text": "We check in regularly and adjust things as your needs and goals change."
+    }
   ],
   "funding_heading": "Ways to fund your support",
   "funding": [
-    { "title": "NDIS", "text": "We're a registered NDIS provider, so we can support you whether your plan is agency managed, plan managed or self managed." },
-    { "title": "Aged care", "text": "Support at home for older Australians receiving services through My Aged Care." },
-    { "title": "Private", "text": "No funding? No problem. You can pay for support privately, with no long contracts." }
+    {
+      "title": "NDIS",
+      "text": "We're a registered NDIS provider, so we can support you whether your plan is agency managed, plan managed or self managed."
+    },
+    {
+      "title": "Aged care",
+      "text": "Support at home for older Australians receiving services through My Aged Care."
+    },
+    {
+      "title": "Private",
+      "text": "No funding? No problem. You can pay for support privately, with no long contracts."
+    }
   ],
   "values_heading": "Why families choose us",
   "values": [
-    { "title": "Family owned and operated", "text": "You'll deal with real people who know your name, not a call centre." },
-    { "title": "Matched to you", "text": "Our diverse team means we can find support workers who fit your lifestyle and personality." },
-    { "title": "Getting the most from your funding", "text": "We work with you and your support network to stretch your funding further." },
-    { "title": "Ethical and sustainable", "text": "We care about doing things the right way, including reducing waste and recycling." }
+    {
+      "title": "Family owned and operated",
+      "text": "You'll deal with real people who know your name, not a call centre."
+    },
+    {
+      "title": "Matched to you",
+      "text": "Our diverse team means we can find support workers who fit your lifestyle and personality."
+    },
+    {
+      "title": "Getting the most from your funding",
+      "text": "We work with you and your support network to stretch your funding further."
+    },
+    {
+      "title": "Ethical and sustainable",
+      "text": "We care about doing things the right way, including reducing waste and recycling."
+    }
   ],
   "locations_heading": "Where we support people",
   "locations_intro": "Local teams in Queensland and on the New South Wales South Coast.",
+  "moments_heading": "Everyday moments",
+  "moments_intro": "A few snapshots from the good times we share with the people we support.",
+  "moments": [
+    {
+      "image": "/images/uploads/moment-gardening.jpg",
+      "alt": "Planting flowers in a backyard veggie patch"
+    },
+    {
+      "image": "/images/uploads/moment-halloween.jpg",
+      "alt": "Having a laugh with the Halloween decorations at the hardware store"
+    },
+    {
+      "image": "/images/uploads/moment-rainforest.jpg",
+      "alt": "A walk through the rainforest"
+    },
+    {
+      "image": "/images/uploads/moment-laughing.jpg",
+      "alt": "Two friends laughing together"
+    },
+    {
+      "image": "/images/uploads/moment-expo.jpg",
+      "alt": "A day out at an expo"
+    },
+    {
+      "image": "/images/uploads/moment-stadium.jpg",
+      "alt": "Heading to a game at the stadium"
+    },
+    {
+      "image": "/images/uploads/moment-sofa.jpg",
+      "alt": "Big smiles at home"
+    },
+    {
+      "image": "/images/uploads/moment-dinner.jpg",
+      "alt": "Dinner out with friends"
+    },
+    {
+      "image": "/images/uploads/moment-park-walk.jpg",
+      "alt": "A walk in the park on a sunny day"
+    },
+    {
+      "image": "/images/uploads/moment-horse.jpg",
+      "alt": "Feeding a horse at a farm visit"
+    }
+  ],
   "team_heading": "Friendly faces you'll get to know",
   "team_intro": "Our clients tell us knowing who's coming matters. Meet some of the people behind Every Human.",
   "cta_heading": "Let's have a chat",

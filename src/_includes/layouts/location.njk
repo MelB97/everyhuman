@@ -5,7 +5,8 @@ layout: layouts/base.njk
 {%- set callable = site.phone | hasPhone -%}
 {%- set people = collections.team | inLocation(team_location) -%}
 <section class="page-hd">
-  <div class="wrap">
+  <div class="wrap page-hd-in">
+    <div>
     <p class="crumb"><a href="/locations/">Locations</a></p>
     <h1>NDIS and aged care support in {{ title }}</h1>
     <p class="lead">{{ lead }}</p>
@@ -13,6 +14,8 @@ layout: layouts/base.njk
       <a class="btn btn-go" href="/contact-us/">Get started</a>
       {%- if callable %}<a class="btn btn-line" href="{{ site.phone | telLink }}">Call {{ site.phone }}</a>{% endif %}
     </div>
+    </div>
+    <div class="hd-photo">{% img image, image_alt, "(max-width: 960px) 92vw, 460px", "", true %}</div>
   </div>
 </section>
 <section class="sec">

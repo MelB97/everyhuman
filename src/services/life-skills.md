@@ -8,6 +8,8 @@ lead: Learning new skills at your own pace, with someone cheering you on, so you
 funding: [NDIS, Private]
 seo_title: Life Skills & Independence Support | Every Human Support Services
 seo_description: NDIS life skills development, including cooking, budgeting, routines, using public transport and building confidence at home and in the community.
+image: /images/uploads/service-trifle.jpg
+image_alt: A client following a recipe to make a trifle
 ---
 We focus on doing things *with* you, not *for* you. Small steps add up, and we celebrate every one of them.
 

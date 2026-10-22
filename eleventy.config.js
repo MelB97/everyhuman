@@ -32,7 +32,7 @@ export default function (eleventyConfig) {
     "src/css": "css",
     "src/js": "js",
     "src/fonts": "fonts",
-    "src/favicon.svg": "favicon.svg",
+    "src/videos": "videos",
     "src/images/brand": "images/brand",
     "src/images/share.jpg": "images/share.jpg",
   });

@@ -8,6 +8,8 @@ lead: Gentle, respectful help with the everyday things, so you can start each da
 funding: [NDIS, Aged care, Private]
 seo_title: Personal Care Support | Every Human Support Services
 seo_description: Respectful personal care at home, including showering, dressing, grooming and medication prompts, for NDIS participants, older Australians and private clients.
+image: /images/uploads/service-mealtime.jpg
+image_alt: A support worker helping a client at mealtime
 ---
 Personal care is personal, so we take the time to learn how you like things done and who you feel comfortable with. Your support worker follows your routine, not the other way around.
 

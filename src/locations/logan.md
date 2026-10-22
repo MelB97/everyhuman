@@ -9,6 +9,8 @@ summary: Our Queensland home base, supporting people across Logan and nearby sub
 lead: Local support workers helping people across Logan live well at home and get out into their community.
 seo_title: NDIS & Aged Care Support in Logan | Every Human Support Services
 seo_description: Registered NDIS provider offering personal care, community access, life skills, household help and transport across Logan and surrounding suburbs.
+image: /images/uploads/location-logan.jpg
+image_alt: A client feeding an alpaca on a day out
 ---
 Logan is our Queensland home base. Our local team knows the area, from the shopping centres and parks to the community groups and activities worth trying.
 

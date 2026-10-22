@@ -4,7 +4,7 @@ layout: layouts/base.njk
 {%- from "partials/icons.njk" import icon -%}
 {%- set callable = site.phone | hasPhone -%}
 <section class="page-hd">
-  <div class="wrap">
+  <div class="wrap page-hd-in">
     <div>
       <p class="crumb"><a href="/services/">Services</a></p>
       <h1>{{ title }}</h1>
@@ -15,6 +15,7 @@ layout: layouts/base.njk
         {%- if callable %}<a class="btn btn-line" href="{{ site.phone | telLink }}">Call {{ site.phone }}</a>{% endif %}
       </div>
     </div>
+    <div class="hd-photo">{% img image, image_alt, "(max-width: 960px) 92vw, 460px", "", true %}</div>
   </div>
 </section>
 <section class="sec">
