@@ -1,6 +1,6 @@
 ---
 name: Tash
-title: Area Manager & Operations Coordinator
+title: Operations Manager
 team: Office team
 order: 2
 based: Illawarra, NSW

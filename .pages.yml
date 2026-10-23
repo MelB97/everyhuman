@@ -37,7 +37,7 @@ content:
         required: true
         default: "Support Worker"
         options:
-          values: ["CEO", "Area Manager & Operations Coordinator", "Manager NSW", "Manager QLD", "Admin", "Team Leader", "Senior Support Worker", "Support Worker"]
+          values: ["CEO", "Operations Manager", "Manager NSW", "Manager QLD", "Admin", "Team Leader", "Senior Support Worker", "Support Worker"]
       - name: team
         label: "Which group are they shown in?"
         type: select
