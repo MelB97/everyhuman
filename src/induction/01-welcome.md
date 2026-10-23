@@ -35,27 +35,39 @@ Throughout this induction, you will learn how Every Human works, what we expect 
 
 Welcome to the team. We are here to support you, too.
 
+### Your Area Manager
+
+Throughout this induction you'll see "contact your Area Manager". Your Area Manager is:
+
+- **NSW:** Tash Goodwin, Operations Manager
+- **QLD:** Mel Byrnes, CEO
+
+If you can't reach your Area Manager, call our main number on [1800 705 930](tel:1800705930).
+
 ### Contact information
-  
+
 **Every Human — General Enquiries**  
 Phone: [1800 705 930](tel:1800705930)  
 Email: [admin@everyhuman.net.au](mailto:admin@everyhuman.net.au)  
 Please use this email address for general Every Human correspondence.
-  
-**Mel Byrnes — CEO | QLD Operations Manager**  
+
+**Mel Byrnes — CEO | QLD Area Manager**  
 Mel oversees Every Human and leads our Queensland operations.  
 Phone: [0458 806 955](tel:0458806955)
-  
-**Tash Goodwin — Director | NSW Operations Manager**  
+
+**Tash Goodwin — Operations Manager | NSW Area Manager**  
 Tash leads our NSW operations and works closely with participants, staff, families, Support Coordinators and other professionals.  
 Phone: [0428 233 419](tel:0428233419)
-  
-**Dee Jayawardana — NSW Operations Coordinator**  
-Dee supports the day-to-day coordination of our NSW operations and works closely with Tash, participants and staff.  
+
+**Dee Jayawardana — Manager NSW**  
+Dee manages the day-to-day running of our NSW operations and works closely with Tash, participants and staff.  
 Phone: [0461 467 123](tel:0461467123)
-  
-**Hannah Harris — Office Trainee**  
-Hannah supports the Every Human team with day-to-day office administration and assists staff with general administrative enquiries received through our general office.
-  
+
+**Hannah Harris — Admin**  
+Hannah supports the Every Human team with day-to-day office administration and helps staff with general enquiries received through our office.
+
+**Kaileigh Naseri — Admin**  
+Kaileigh supports the Every Human team with administration from our Queensland office.
+
 **Payroll Enquiries**  
 For payroll and accounts-related enquiries, please email [accounts@everyhuman.net.au](mailto:accounts@everyhuman.net.au).

@@ -1,6 +1,6 @@
 ---
 title: Medication Support
-order: 22
+order: 23
 questions:
 - question: A participant's medication plan says the worker is to dispense their night medication, but the participant chooses when to take it within their agreed routine. You dispense the medication, but do not witness them taking it. What should you document?
   options:

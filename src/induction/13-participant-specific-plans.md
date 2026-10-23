@@ -1,6 +1,6 @@
 ---
 title: Participant-Specific Support Plans and Instructions
-order: 12
+order: 13
 questions:
 - question: You arrive for a shift and notice that the participant's current instructions do not match what another worker tells you to do. The difference could affect the participant's health or safety. What should you do?
   options:

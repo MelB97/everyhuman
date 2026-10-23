@@ -1,6 +1,6 @@
 ---
 title: Professional Boundaries, Privacy & Confidentiality
-order: 19
+order: 20
 questions:
 - question: A participant you regularly support asks you to add them on your personal Facebook account so you can keep in touch outside shifts. What should you do?
   options:
@@ -20,7 +20,7 @@ questions:
     correct: true
   - text: Accept it but tell your Area Manager afterwards.
     correct: false
-  - text: Report the concern promptly to Every Human and follow the required child-safety and mandatory-reporting process.
+  - text: Politely accept it, then donate it to charity so you are not keeping it for yourself.
     correct: false
 - question: A participant's family member asks you for information about the participant's health and recent supports. You are unsure whether you are authorised to share this information with them. What should you do?
   options:

@@ -1,6 +1,6 @@
 ---
 title: Duty of Care & Dignity of Risk
-order: 10
+order: 11
 questions:
 - question: A participant wants to do an activity that you believe involves some risk. The participant understands the risk and still wants to proceed. There is no immediate danger. What should you do?
   options:

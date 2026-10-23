@@ -1,6 +1,6 @@
 ---
 title: Responding to Abuse, Neglect or Exploitation
-order: 16
+order: 17
 questions:
 - question: A participant tells you that someone has been hurting them and asks you not to tell anyone. What should you do?
   options:

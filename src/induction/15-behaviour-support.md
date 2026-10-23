@@ -1,6 +1,6 @@
 ---
 title: Behaviour Support & Restrictive Practices
-order: 14
+order: 15
 questions:
 - question: A participant becomes increasingly distressed during a shift and begins raising their voice and pacing. What should you do?
   options:

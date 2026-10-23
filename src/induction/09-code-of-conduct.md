@@ -1,6 +1,6 @@
 ---
 title: Code of Conduct
-order: 8
+order: 9
 questions:
 - question: A participant asks you to do something during their support that you are unsure is safe or within your role. What should you do?
   options:
@@ -20,9 +20,9 @@ questions:
   - text: Go ahead and accept the shift, you will be able to sneak off to have a cigarette at some point.
     correct: false
   - text: Only if client consent has been obtained, you may step out and have a cigarette during the shift.
-    correct: true
-  - text: Do nothing, your stress levels will be manageable.
     correct: false
+  - text: Only smoke during an appropriate break or between shifts, away from participants, and never while providing direct support.
+    correct: true
 ---
 As an Every Human Support Worker, you are expected to provide support that is safe, respectful, professional and person-centred.
 

@@ -1,6 +1,6 @@
 ---
 title: Mandatory Reporting & Reportable Incidents
-order: 17
+order: 18
 questions:
 - question: What responsibilities do workers have in relation to abuse, exploitation and neglect of a participant?
   note: Choose 2 answers
