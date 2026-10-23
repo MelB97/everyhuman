@@ -113,6 +113,7 @@ content:
     format: json
     fields:
       - { name: intro, label: "Intro text", type: text }
+      - { name: astalty_note, label: "Where to find policies (Astalty) note", type: text }
       - name: groups
         label: "Groups of links"
         type: object

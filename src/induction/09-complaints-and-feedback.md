@@ -60,7 +60,7 @@ Complaints and feedback can help Every Human identify problems and improve the q
 
 ### Where to Find the Complaints Process
 
-The Every Human Complaints & Feedback Management Policy and Complaint and Feedback Form are available through the Every Human Staff Portal.
+The Every Human Complaints & Feedback Management Policy and Complaint and Feedback Form are available in Astalty, under **Profile → Resources**.
 
 If you are unsure what to do when a complaint is raised, contact your Area Manager for guidance.
 

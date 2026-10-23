@@ -18,6 +18,7 @@ eleventyExcludeFromCollections: true
     <ul class="cards portal-top">
       <li class="card"><h2 class="h-sm"><a class="card-link" href="/staff/induction/">Staff induction</a></h2><p>New to Every Human? Start here. Work through each section and sign off at the end.</p></li>
       <li class="card"><h2 class="h-sm"><a class="card-link" href="/staff/team-update/">Website update request</a></h2><p>Add or remove someone from the Our Team page, or ask for any other website change.</p></li>
+      <li class="card card-astalty"><h2 class="h-sm">Policies, procedures and forms</h2><p>{{ staff.astalty_note }}</p></li>
     </ul>
     {%- for g in staff.groups %}
     <h2 class="h-sm portal-h">{{ g.name }}</h2>

@@ -1,28 +1,5 @@
 {
-  "intro": "Policies, procedures, forms and reporting tools for Every Human staff. If you're not sure which form or policy applies, contact your Area Manager rather than guessing.",
-  "groups": [
-    {
-      "name": "Forms and reporting",
-      "links": [
-        { "title": "Incident Report Form", "url": "" },
-        { "title": "ABC Chart", "url": "" },
-        { "title": "Unauthorised Restrictive Practice Form", "url": "" },
-        { "title": "S8 Administration Form", "url": "" },
-        { "title": "Participant Risk Assessment", "url": "" },
-        { "title": "Complaint and Feedback Form", "url": "" },
-        { "title": "Conflict of Interest Form", "url": "" },
-        { "title": "Vehicle Accident Form", "url": "" }
-      ]
-    },
-    {
-      "name": "Policies",
-      "links": [
-        { "title": "Employee policies", "url": "" },
-        { "title": "Participant policies", "url": "" },
-        { "title": "Company policies", "url": "" },
-        { "title": "Complaints & Feedback Management Policy", "url": "" },
-        { "title": "NDIS Code of Conduct", "url": "https://www.ndiscommission.gov.au/rules-and-standards/codes-conduct" }
-      ]
-    }
-  ]
+  "intro": "Quick links for Every Human staff. Policies, procedures and forms are kept in Astalty.",
+  "groups": [],
+  "astalty_note": "Open Astalty, go to your Profile tab and select Resources to find all Every Human policies, procedures and forms, including incident reports, ABC charts and complaint forms."
 }

@@ -25,4 +25,4 @@ Everything else (services, locations, homepage wording, business details) is in 
 - The **Staff Portal** is at `everyhuman.net.au/staff/`. Like the old site, staff open it by clicking the **Copyright © … All rights reserved** text in the footer.
 - The **induction** is at `everyhuman.net.au/staff/induction/`. Staff must answer every question correctly to move on, then sign off with their name and details. Progress saves on their device automatically, and **Save and finish later** gives them a personal link to continue on any device.
 - Completions arrive by email and are kept in Netlify under **Forms → induction**, where you can download them as a spreadsheet for audits.
-- Change induction text or questions in Pages CMS → **Staff induction**. Add Staff Portal links in Pages CMS → **Staff Portal**.
+- Change induction text or questions in Pages CMS → **Staff induction**. Policies, procedures and forms live in **Astalty → Profile → Resources**, and the induction and Staff Portal page point staff there.

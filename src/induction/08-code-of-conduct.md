@@ -72,4 +72,4 @@ There are 7 essential elements in the Code of Conduct. They are:
 6. Take steps to prevent and respond to abuse, violence and neglect
 7. Take steps to prevent and respond to sexual misconduct
 
-The NDIS Code of Conduct and Every Human's Code of Conduct Policy are also available in the Staff Portal.
+The NDIS Code of Conduct and Every Human's Code of Conduct Policy are also available in Astalty, under **Profile → Resources**.

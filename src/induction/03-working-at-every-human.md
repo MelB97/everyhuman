@@ -31,15 +31,15 @@ It explains how we manage participant information, staff resources, rosters and 
 
 Every Human uses Astalty as our Client Management System (CRM) to manage participant information, rosters, service delivery and important records.
 
-As a Support Worker, you will use Astalty as part of your everyday work. You are responsible for checking the information relevant to your shifts and completing required documentation
+As a Support Worker, you will use Astalty as part of your everyday work. You are responsible for checking the information relevant to your shifts and completing required documentation accurately and on time.
 
-accurately and on time.
+### Policies, procedures and forms
 
-### Every Human Staff Portal
+Every Human's policies, procedures, forms and reporting tools are kept in Astalty, so you can find them wherever you are.
 
-Every Human has a Staff Portal on our website where staff can quickly access important policies, procedures, forms and reporting tools.
+To find them, open Astalty, go to your **Profile** tab and select **Resources**.
 
-The Staff Portal includes resources such as:
+Resources include:
 
 - Incident Report Forms
 - ABC Charts
@@ -51,15 +51,11 @@ The Staff Portal includes resources such as:
 - Vehicle Accident Forms
 - Employee, Participant and Company policies.
 
-### How to access the Staff Portal
-
-Go to the Every Human website and scroll to the bottom of the page. Click the Copyright © All rights reserved text in the footer to open the Staff Portal.
-
-Staff are expected to know how to access the portal and to use the current forms, policies and procedures available there.
+Staff are expected to know where to find these resources and to use the current versions in Astalty.
 
 If you are unsure which form, policy or procedure applies to a situation, contact your Area Manager rather than guessing.
 
-Important: The Staff Portal is there for you to use. You are not expected to remember every policy or procedure — but you are expected to know where to find them and to ask for guidance when you are unsure.
+**Important:** You are not expected to remember every policy or procedure, but you are expected to know where to find them and to ask for guidance when you are unsure.
 
 ### Before each shift
 
