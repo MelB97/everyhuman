@@ -102,7 +102,10 @@ export default function (eleventyConfig) {
       .sort((a, b) => {
         const ga = a.data.team === "Office team" ? 0 : 1;
         const gb = b.data.team === "Office team" ? 0 : 1;
-        return ga - gb || (a.data.order ?? 99) - (b.data.order ?? 99) || String(a.data.name).localeCompare(String(b.data.name));
+        // Office team in set order; support team A to Z by name
+        if (ga !== gb) return ga - gb;
+        if (ga === 0) return (a.data.order ?? 99) - (b.data.order ?? 99) || String(a.data.name).localeCompare(String(b.data.name));
+        return String(a.data.name).localeCompare(String(b.data.name), "en-AU", { sensitivity: "base" });
       })
   );
 
