@@ -488,3 +488,11 @@ select{appearance:none;background-image:url("data:image/svg+xml,%3Csvg xmlns='ht
 .portal-links .ico{color:var(--coral);width:20px;height:20px}
 .portal-soon{display:block!important;color:var(--ink-2);font-weight:400;background:var(--cream)}
 .portal-soon em{display:block;font-size:.88rem}
+
+/* Support team location filter */
+.team-filter{display:flex;flex-wrap:wrap;gap:10px;margin:0 0 28px}
+.team-filter button{display:inline-flex;align-items:center;gap:8px;min-height:46px;padding:0 18px;border-radius:999px;border:2px solid var(--line);background:#fff;font:700 1rem/1 var(--sans);color:var(--ink);cursor:pointer}
+.team-filter button:hover{border-color:var(--teal)}
+.team-filter button[aria-pressed="true"]{background:var(--teal);border-color:var(--teal);color:#fff}
+.team-filter span{display:inline-grid;place-items:center;min-width:26px;height:26px;padding:0 6px;border-radius:99px;background:var(--cream);color:var(--teal);font-size:.85rem}
+.team-filter button[aria-pressed="true"] span{background:rgba(255,255,255,.2);color:#fff}

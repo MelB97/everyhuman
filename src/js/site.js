@@ -171,3 +171,22 @@
   if (resume === "finish") { for (var i = 0; i < total; i++) if (!sectionDone(i)) { resume = i; break; } }
   show(resume, false);
 })();
+
+// Our Team: filter the support team by location
+(function () {
+  var bar = document.querySelector("[data-team-filter]");
+  if (!bar) return;
+  var list = bar.parentNode.querySelector(".team");
+  var status = bar.parentNode.querySelector("[data-filter-status]");
+  bar.addEventListener("click", function (e) {
+    var b = e.target.closest("button[data-filter]");
+    if (!b) return;
+    var f = b.dataset.filter, shown = 0;
+    bar.querySelectorAll("button").forEach(function (x) { x.setAttribute("aria-pressed", String(x === b)); });
+    list.querySelectorAll(".person").forEach(function (p) {
+      var on = f === "all" || p.dataset.group === f;
+      p.hidden = !on; if (on) shown++;
+    });
+    if (status) status.textContent = "Showing " + shown + " team members";
+  });
+})();

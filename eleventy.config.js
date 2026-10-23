@@ -106,6 +106,21 @@ export default function (eleventyConfig) {
       })
   );
 
+  eleventyConfig.addFilter("officeTeam", (team) => (team || []).filter((t) => t.data.team === "Office team"));
+  // Location filter buttons for the support team: one per "based in" value, named after the matching location page
+  eleventyConfig.addFilter("teamGroups", (people, locations) => {
+    const groups = new Map();
+    for (const t of people || []) {
+      const based = String(t.data.based || "");
+      if (!based) continue;
+      if (!groups.has(based)) {
+        const loc = (locations || []).find((l) => l.data.team_location === based);
+        groups.set(based, { key: based, label: loc ? loc.data.title : based.replace(/,\s*(QLD|NSW)$/, ""), order: loc ? loc.data.order : 50, count: 0 });
+      }
+      groups.get(based).count++;
+    }
+    return [...groups.values()].sort((a, b) => a.order - b.order);
+  });
   eleventyConfig.addFilter("inLocation", (team, loc) =>
     (team || []).filter((t) => {
       if (t.data.all_locations === true || t.data.based === loc) return true;

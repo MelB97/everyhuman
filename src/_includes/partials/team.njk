@@ -1,7 +1,7 @@
 {#- Team cards. Set `people` before including. -#}
 <ul class="team">
   {%- for t in people %}
-  <li class="person">
+  <li class="person" data-group="{{ t.data.based | slug }}">
     <div class="person-pic {{ t.data.name | tint }}">
       {%- if t.data.photo %}<img src="{{ t.data.photo }}" alt="{{ t.data.name }}, {{ t.data.title }} at {{ site.short_name }}" width="200" height="200" loading="lazy" decoding="async">{% else %}<span aria-hidden="true">{{ t.data.name | initials }}</span>{% endif %}
     </div>

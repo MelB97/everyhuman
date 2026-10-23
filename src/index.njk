@@ -138,14 +138,14 @@ eleventyComputed:
 </section>
 {%- endif %}
 
-{%- if collections.team.length %}
+{%- if (collections.team | officeTeam).length %}
 <section class="sec">
   <div class="wrap">
     <div class="sec-hd">
       <h2>{{ home.team_heading }}</h2>
       <p class="lead">{{ home.team_intro }}</p>
     </div>
-    {%- set people = collections.team | limit(8) %}
+    {%- set people = collections.team | officeTeam %}
     {% include "partials/team.njk" %}
     <div class="btns btns-c"><a class="btn btn-line" href="/our-team/">Meet the whole team</a></div>
   </div>

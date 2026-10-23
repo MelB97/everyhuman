@@ -58,6 +58,16 @@ eleventyComputed:
 <section class="sec">
   <div class="wrap">
     <div class="sec-hd"><h2>{{ about.support_heading }}</h2><p class="lead">{{ about.support_intro }}</p></div>
+    {%- set groups = support | teamGroups(collections.locations) %}
+    {%- if groups.length > 1 %}
+    <div class="team-filter" role="group" aria-label="Show support workers by location" data-team-filter>
+      <button type="button" aria-pressed="true" data-filter="all">All <span>{{ support.length }}</span></button>
+      {%- for g in groups %}
+      <button type="button" aria-pressed="false" data-filter="{{ g.key | slug }}">{{ g.label }} <span>{{ g.count }}</span></button>
+      {%- endfor %}
+    </div>
+    <p class="sr" aria-live="polite" data-filter-status></p>
+    {%- endif %}
     {%- set people = support %}
     {% include "partials/team.njk" %}
   </div>
