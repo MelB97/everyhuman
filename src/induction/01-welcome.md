@@ -57,7 +57,7 @@ Phone: [0458 806 955](tel:0458806955)
 
 **Tash Goodwin — Operations Manager | NSW Area Manager**  
 Tash leads our NSW operations and works closely with participants, staff, families, Support Coordinators and other professionals.  
-Phone: [0428 233 419](tel:0428233419)
+NSW Office: [0459 711 416](tel:0459711416)
 
 **Dee Jayawardana — Manager NSW**  
 Dee manages the day-to-day running of our NSW operations and works closely with Tash, participants and staff.  
