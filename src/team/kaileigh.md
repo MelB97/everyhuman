@@ -5,7 +5,7 @@ team: Office team
 order: 5
 based: Gold Coast, QLD
 all_locations: false
-photo: ""
+photo: /images/uploads/team-kaileigh.jpg
 bio: ""
 show: true
 ---

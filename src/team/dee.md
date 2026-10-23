@@ -5,7 +5,7 @@ team: Office team
 order: 3
 based: Illawarra, NSW
 all_locations: false
-photo: ""
+photo: /images/uploads/team-dee.jpg
 bio: ""
 show: true
 ---

@@ -5,7 +5,7 @@ team: Office team
 order: 1
 based: Gold Coast, QLD
 all_locations: true
-photo: ""
+photo: /images/uploads/team-mel.jpg
 bio: ""
 show: true
 ---
