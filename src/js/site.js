@@ -82,6 +82,27 @@
   try { var saved = JSON.parse(localStorage.getItem(KEY) || "null"); if (saved) state = saved; } catch (e) {}
   function save() { try { localStorage.setItem(KEY, JSON.stringify(state)); } catch (e) {} }
 
+  // Personal "finish later" link: progress packed into the web address, so it works on any device
+  function pack() {
+    var o = { s: state.step, d: Object.keys(state.done), w: state.wrong, t: state.started };
+    return btoa(unescape(encodeURIComponent(JSON.stringify(o)))).replace(/\+/g, "-").replace(/\//g, "_").replace(/=+$/, "");
+  }
+  var resumed = false;
+  (function () {
+    var m = location.hash.match(/resume=([\w-]+)/);
+    if (!m) return;
+    try {
+      var o = JSON.parse(decodeURIComponent(escape(atob(m[1].replace(/-/g, "+").replace(/_/g, "/")))));
+      (o.d || []).forEach(function (id) { state.done[id] = true; });
+      var rank = function (s) { return s === "start" ? -1 : s === "finish" ? 999 : +s; };
+      if (rank(o.s) > rank(state.step)) state.step = o.s;
+      state.wrong = Math.max(state.wrong || 0, o.w || 0);
+      if (o.t && (!state.started || o.t < state.started)) state.started = o.t;
+      resumed = true; save();
+    } catch (e) {}
+    history.replaceState(null, "", location.pathname);
+  })();
+
   // Shuffle so the right answer isn't always in the same spot
   function shuffle(a) { for (var i = a.length - 1; i > 0; i--) { var j = Math.floor(Math.random() * (i + 1)); var t = a[i]; a[i] = a[j]; a[j] = t; } return a; }
 
@@ -166,6 +187,29 @@
     form.querySelector('[data-f="questions"]').value = Object.keys(state.done).length + " correct";
     form.querySelector('[data-f="wrong"]').value = String(state.wrong);
   });
+  var panel = root.querySelector("[data-save-panel]");
+  var linkBox = root.querySelector("[data-resume-link]");
+  root.querySelectorAll("[data-save]").forEach(function (b) {
+    b.addEventListener("click", function () {
+      save();
+      var url = location.origin + location.pathname + "#resume=" + pack();
+      linkBox.value = url;
+      root.querySelector("[data-email-link]").href = "mailto:?subject=" + encodeURIComponent("My Every Human induction link") +
+        "&body=" + encodeURIComponent("Open this link to continue my Every Human staff induction where I left off:\n\n" + url);
+      panel.hidden = false;
+      panel.scrollIntoView({ block: "center" });
+      panel.querySelector("h2").focus({ preventScroll: true });
+    });
+  });
+  root.querySelector("[data-copy-link]").addEventListener("click", function () {
+    var btn = this;
+    linkBox.select();
+    var done = function () { btn.textContent = "Copied"; setTimeout(function () { btn.textContent = "Copy link"; }, 2000); };
+    if (navigator.clipboard) navigator.clipboard.writeText(linkBox.value).then(done, function () { document.execCommand("copy"); done(); });
+    else { document.execCommand("copy"); done(); }
+  });
+  root.querySelector("[data-close-save]").addEventListener("click", function () { panel.hidden = true; });
+  if (resumed && state.step !== "start") root.querySelector("[data-resumed]").hidden = false;
   refresh();
   var resume = state.step;
   if (resume === "finish") { for (var i = 0; i < total; i++) if (!sectionDone(i)) { resume = i; break; } }

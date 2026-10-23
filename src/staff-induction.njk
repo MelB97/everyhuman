@@ -21,6 +21,20 @@ eleventyExcludeFromCollections: true
   <div class="wrap ind-wrap">
     <div class="ind-progress" aria-hidden="true"><span data-bar></span></div>
     <p class="ind-count" data-count aria-live="polite"></p>
+    <p class="ind-resumed" data-resumed hidden>Welcome back! We've picked up where you left off.</p>
+
+    {#- Save and finish later -#}
+    <div class="ind-save" data-save-panel hidden>
+      <h2 class="h-sm" tabindex="-1">Your progress is saved</h2>
+      <p>This device will remember where you're up to. To continue on a different phone or computer, save this link and open it when you're ready.</p>
+      <div class="field"><label for="resume-link">Your personal link</label><input id="resume-link" readonly data-resume-link></div>
+      <div class="btns">
+        <button class="btn btn-go" type="button" data-copy-link>Copy link</button>
+        <a class="btn btn-line" href="#" data-email-link>Email it to myself</a>
+        <button class="btn btn-line" type="button" data-close-save>Keep going now</button>
+      </div>
+      <p class="form-note">Keep this link to yourself. It only saves which sections you've completed, not your name or details.</p>
+    </div>
 
     {#- Start screen -#}
     <div class="ind-step" data-step="start">
@@ -28,7 +42,7 @@ eleventyExcludeFromCollections: true
       <ul class="ticks">
         <li>{{ icon("check") }} There are {{ sections.length }} sections and {{ qcount }} questions. Allow about an hour.</li>
         <li>{{ icon("check") }} Read each section carefully. If you choose a wrong answer, have another look at the section and try again.</li>
-        <li>{{ icon("check") }} Your progress is saved on this device, so you can come back and pick up where you left off.</li>
+        <li>{{ icon("check") }} Your progress saves automatically on this device. Need to stop part way, or switch devices? Use <strong>Save and finish later</strong> to get a link that takes you back to where you were.</li>
         <li>{{ icon("check") }} At the end, you'll enter your details and we'll be notified that you've completed it.</li>
       </ul>
       <div class="btns"><button class="btn btn-go" type="button" data-start>Start the induction</button></div>
@@ -51,6 +65,7 @@ eleventyExcludeFromCollections: true
       {%- endfor %}
       <div class="ind-nav">
         <button class="btn btn-line" type="button" data-back>Back</button>
+        <button class="btn btn-ghost" type="button" data-save>Save and finish later</button>
         <button class="btn btn-go" type="button" data-next {% if s.data.questions.length %}disabled{% endif %}>{% if loop.last %}Finish{% else %}Next section{% endif %}</button>
       </div>
       {%- if s.data.questions.length %}<p class="ind-hint" data-hint>Answer every question correctly to continue.</p>{% endif %}

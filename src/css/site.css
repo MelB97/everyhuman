@@ -496,3 +496,15 @@ select{appearance:none;background-image:url("data:image/svg+xml,%3Csvg xmlns='ht
 .team-filter button[aria-pressed="true"]{background:var(--teal);border-color:var(--teal);color:#fff}
 .team-filter span{display:inline-grid;place-items:center;min-width:26px;height:26px;padding:0 6px;border-radius:99px;background:var(--cream);color:var(--teal);font-size:.85rem}
 .team-filter button[aria-pressed="true"] span{background:#fff;color:var(--teal)}
+
+/* Induction: save and finish later */
+.btn-ghost{background:transparent;border-color:transparent;color:var(--teal);text-decoration:underline;text-underline-offset:.2em;padding:0 12px}
+.btn-ghost:hover{color:var(--coral-ink)}
+.ind-nav{align-items:center}
+.ind-nav [data-next]{margin-left:auto}
+.ind-save{margin:0 0 24px;padding:clamp(20px,3vw,32px);border-radius:20px;background:var(--teal-lt);border:2px solid var(--leaf)}
+.ind-save h2:focus{outline:none}
+.ind-save input{background:#fff;font-size:.95rem}
+.ind-save .btns{margin-top:6px}
+.ind-resumed{padding:12px 16px;border-radius:14px;background:var(--sun-lt);font-weight:700;margin-bottom:20px}
+@media (max-width:640px){.ind-nav [data-save]{order:3;flex-basis:100%}}
