@@ -5,7 +5,7 @@ team: Support team
 order: 33
 based: Illawarra, NSW
 all_locations: false
-photo: ""
+photo: /images/uploads/team-michelle.jpg
 bio: ""
 show: true
 ---
