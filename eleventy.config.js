@@ -44,6 +44,7 @@ export default function (eleventyConfig) {
     "src/fonts": "fonts",
     "src/videos": "videos",
     "src/images/brand": "images/brand",
+    "src/images/uploads": "images/uploads",
     "src/images/share.jpg": "images/share.jpg",
   });
 

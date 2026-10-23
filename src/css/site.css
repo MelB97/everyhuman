@@ -216,7 +216,7 @@ p{margin:0 0 1em}
 .person{text-align:center;padding:22px 16px 18px;background:var(--card);border:1px solid var(--line);border-radius:var(--r)}
 .person-pic{width:132px;height:132px;margin:0 auto 14px;border-radius:50%;overflow:hidden;display:grid;place-items:center;font:600 2.4rem/1 var(--serif);box-shadow:0 0 0 6px var(--cream)}
 .person-pic picture,.person-pic img{width:100%;height:100%}
-.person-pic img{object-fit:cover}
+.person-pic img{object-fit:cover;object-position:50% 40%}
 .tint-0{background:var(--teal-lt);color:var(--teal)}
 .tint-1{background:var(--coral-lt);color:var(--coral-ink)}
 .tint-2{background:var(--sun-lt);color:#8a5a00}
