@@ -107,7 +107,13 @@ export default function (eleventyConfig) {
   );
 
   eleventyConfig.addFilter("inLocation", (team, loc) =>
-    (team || []).filter((t) => t.data.based === loc || t.data.all_locations === true)
+    (team || []).filter((t) => {
+      if (t.data.all_locations === true || t.data.based === loc) return true;
+      // "Logan & Gold Coast, QLD" shows on both the Logan and Gold Coast pages
+      const [places, state] = String(t.data.based || "").split(/,\s*/);
+      const [town, locState] = String(loc || "").split(/,\s*/);
+      return state === locState && (places || "").split(/\s*&\s*/).includes(town);
+    })
   );
   eleventyConfig.addFilter("initials", (name) =>
     String(name || "")
