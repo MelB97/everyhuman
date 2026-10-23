@@ -1,0 +1,92 @@
+---
+layout: layouts/base.njk
+permalink: /staff/induction/
+title: Staff induction
+noindex: true
+bodyClass: is-induction
+eleventyExcludeFromCollections: true
+---
+{%- from "partials/icons.njk" import icon -%}
+{%- set sections = collections.induction -%}
+{%- set qcount = 0 -%}{%- for s in sections %}{% set qcount = qcount + (s.data.questions | length) %}{% endfor -%}
+<section class="page-hd page-hd-staff">
+  <div class="wrap">
+    <p class="crumb">Staff only</p>
+    <h1>Every Human staff induction</h1>
+    <p class="lead">Work through each section, answer the questions, and sign off at the end. Every question needs the right answer before you can move on.</p>
+  </div>
+</section>
+
+<section class="sec induction" data-induction data-total="{{ sections.length }}">
+  <div class="wrap ind-wrap">
+    <div class="ind-progress" aria-hidden="true"><span data-bar></span></div>
+    <p class="ind-count" data-count aria-live="polite"></p>
+
+    {#- Start screen -#}
+    <div class="ind-step" data-step="start">
+      <h2>Before you start</h2>
+      <ul class="ticks">
+        <li>{{ icon("check") }} There are {{ sections.length }} sections and {{ qcount }} questions. Allow about an hour.</li>
+        <li>{{ icon("check") }} Read each section carefully. If you choose a wrong answer, have another look at the section and try again.</li>
+        <li>{{ icon("check") }} Your progress is saved on this device, so you can come back and pick up where you left off.</li>
+        <li>{{ icon("check") }} At the end, you'll enter your details and we'll be notified that you've completed it.</li>
+      </ul>
+      <div class="btns"><button class="btn btn-go" type="button" data-start>Start the induction</button></div>
+    </div>
+
+    {#- One step per section -#}
+    {%- for s in sections %}
+    {%- set si = loop.index0 %}
+    <article class="ind-step" data-step="{{ si }}" hidden>
+      <p class="ind-kicker">Section {{ loop.index }} of {{ sections.length }}</p>
+      <h2 tabindex="-1">{{ s.data.title }}</h2>
+      <div class="prose ind-body">{{ s.content | safe }}</div>
+      {%- for q in s.data.questions %}
+      <fieldset class="ind-q" data-q="{{ si }}-{{ loop.index0 }}">
+        <legend><span class="ind-qlabel">Question {{ loop.index }}{% if s.data.questions.length > 1 %} of {{ s.data.questions.length }}{% endif %}</span>{{ q.question }}{% if q.note %} <strong class="ind-note">({{ q.note }})</strong>{% endif %}</legend>
+        <div class="ind-opts" data-opts></div>
+        {%- if q.note %}<button class="btn btn-line ind-check" type="button" data-check>Check my answers</button>{% endif %}
+        <p class="ind-fb" data-fb role="status" aria-live="polite"></p>
+      </fieldset>
+      {%- endfor %}
+      <div class="ind-nav">
+        <button class="btn btn-line" type="button" data-back>Back</button>
+        <button class="btn btn-go" type="button" data-next {% if s.data.questions.length %}disabled{% endif %}>{% if loop.last %}Finish{% else %}Next section{% endif %}</button>
+      </div>
+      {%- if s.data.questions.length %}<p class="ind-hint" data-hint>Answer every question correctly to continue.</p>{% endif %}
+    </article>
+    {%- endfor %}
+
+    {#- Sign off -#}
+    <div class="ind-step" data-step="finish" hidden>
+      <form class="form" name="induction" method="POST" action="/staff/induction/complete/" data-netlify="true" netlify-honeypot="bot-field" data-ind-form>
+        <h2 tabindex="-1">Sign off</h2>
+        <p>Well done, you've completed every section. Enter your details below so we can record your induction.</p>
+        <input type="hidden" name="form-name" value="induction">
+        <p class="hp" aria-hidden="true"><label>Don't fill this out if you're human: <input name="bot-field" tabindex="-1" autocomplete="new-password"></label></p>
+        <input type="hidden" name="started_at" data-f="started">
+        <input type="hidden" name="completed_at" data-f="completed">
+        <input type="hidden" name="sections_completed" data-f="sections">
+        <input type="hidden" name="questions_answered" data-f="questions">
+        <input type="hidden" name="incorrect_attempts" data-f="wrong">
+        <div class="field"><label for="i-name">Full name</label><input id="i-name" name="name" autocomplete="name" required></div>
+        <div class="field-row">
+          <div class="field"><label for="i-email">Email</label><input id="i-email" name="email" type="email" autocomplete="email" required></div>
+          <div class="field"><label for="i-phone">Mobile <span class="opt">(optional)</span></label><input id="i-phone" name="phone" type="tel" autocomplete="tel"></div>
+        </div>
+        <div class="field">
+          <label for="i-loc">Location you'll work in</label>
+          <select id="i-loc" name="location" required>
+            <option value="">Choose one</option>
+            {%- for l in collections.locations %}<option>{{ l.data.area }}</option>{% endfor %}
+          </select>
+        </div>
+        <label class="check check-consent"><input type="checkbox" name="declaration" value="Yes" required> I have read and understood the Every Human staff induction, and I agree to follow Every Human's policies, procedures and the NDIS Code of Conduct.</label>
+        <button class="btn btn-go" type="submit">Submit my induction</button>
+        <p class="form-note">Your answers aren't sent, just your details and confirmation that you completed every section.</p>
+      </form>
+      <div class="ind-nav"><button class="btn btn-line" type="button" data-back>Back</button></div>
+    </div>
+  </div>
+  <script type="application/json" id="induction-data">"{{ sections | inductionData }}"</script>
+</section>

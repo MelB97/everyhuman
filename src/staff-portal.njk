@@ -1,0 +1,32 @@
+---
+layout: layouts/base.njk
+permalink: /staff/
+title: Staff Portal
+noindex: true
+eleventyExcludeFromCollections: true
+---
+{%- from "partials/icons.njk" import icon -%}
+<section class="page-hd page-hd-staff">
+  <div class="wrap">
+    <p class="crumb">Staff only</p>
+    <h1>Staff Portal</h1>
+    <p class="lead">{{ staff.intro }}</p>
+  </div>
+</section>
+<section class="sec">
+  <div class="wrap">
+    <ul class="cards portal-top">
+      <li class="card"><h2 class="h-sm"><a class="card-link" href="/staff/induction/">Staff induction</a></h2><p>New to Every Human? Start here. Work through each section and sign off at the end.</p></li>
+      <li class="card"><h2 class="h-sm"><a class="card-link" href="/staff/team-update/">Website update request</a></h2><p>Add or remove someone from the Our Team page, or ask for any other website change.</p></li>
+    </ul>
+    {%- for g in staff.groups %}
+    <h2 class="h-sm portal-h">{{ g.name }}</h2>
+    <ul class="portal-links">
+      {%- for l in g.links %}
+      <li>{% if l.url %}<a href="{{ l.url }}" rel="noopener">{{ icon("arrow") }}<span>{{ l.title }}</span></a>{% else %}<span class="portal-soon">{{ l.title }} <em>(link coming soon)</em></span>{% endif %}</li>
+      {%- endfor %}
+    </ul>
+    {%- endfor %}
+    <p class="note-line">{{ icon("phone") }} Not sure what to use? Call <a href="{{ site.phone | telLink }}">{{ site.phone }}</a> or contact your Area Manager.</p>
+  </div>
+</section>

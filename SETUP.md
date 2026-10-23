@@ -7,6 +7,7 @@
    - `accounts` → accounts@everyhuman.net.au
    - `careers` → admin@everyhuman.net.au
    - `team-update` → Mel and Kaileigh
+   - `induction` → whoever keeps staff records (each completion arrives as an email with name, email, location and date)
 3. Point everyhuman.net.au at Netlify.
 4. Before launch, fill in the real phone number in **Business details**. The phone number stays hidden on the site until a real number is entered.
 
@@ -19,3 +20,9 @@ The referral page uses the Astalty form, so referrals go straight into Astalty, 
 
 ## Other edits
 Everything else (services, locations, homepage wording, business details) is in Pages CMS too.
+
+## Staff Portal and induction
+- The **Staff Portal** is at `everyhuman.net.au/staff/`. Like the old site, staff open it by clicking the **Copyright © … All rights reserved** text in the footer.
+- The **induction** is at `everyhuman.net.au/staff/induction/`. Staff must answer every question correctly to move on, then sign off with their name and details.
+- Completions arrive by email and are kept in Netlify under **Forms → induction**, where you can download them as a spreadsheet for audits.
+- Change induction text or questions in Pages CMS → **Staff induction**. Add Staff Portal links in Pages CMS → **Staff Portal**.

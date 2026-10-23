@@ -75,6 +75,58 @@ content:
         default: true
         description: "Untick to hide someone without deleting them."
 
+  # ── Staff induction ── one entry per section, in order.
+  - name: induction
+    label: "Staff induction"
+    type: collection
+    path: src/induction
+    format: yaml-frontmatter
+    view:
+      primary: title
+      fields: [title, order]
+      sort: [order]
+    fields:
+      - { name: title, label: "Section heading", type: string, required: true }
+      - { name: order, label: "Order", type: number, required: true, description: "Sections show in this order. Use whole numbers." }
+      - { name: body, label: "Section text", type: rich-text }
+      - name: questions
+        label: "Questions (optional)"
+        type: object
+        list: true
+        description: "Staff must pick the correct answer before they can move to the next section."
+        fields:
+          - { name: question, label: "Question", type: text, required: true }
+          - { name: note, label: "Instruction (only for questions with more than one right answer)", type: string, description: "e.g. Choose 2 answers. Leave empty for normal one-answer questions." }
+          - name: options
+            label: "Answers"
+            type: object
+            list: true
+            fields:
+              - { name: text, label: "Answer", type: text, required: true }
+              - { name: correct, label: "This is a correct answer", type: boolean, default: false }
+
+  # ── Staff Portal links ──
+  - name: staff
+    label: "Staff Portal"
+    type: file
+    path: src/_data/staff.json
+    format: json
+    fields:
+      - { name: intro, label: "Intro text", type: text }
+      - name: groups
+        label: "Groups of links"
+        type: object
+        list: true
+        fields:
+          - { name: name, label: "Group heading", type: string }
+          - name: links
+            label: Links
+            type: object
+            list: true
+            fields:
+              - { name: title, label: "Name", type: string }
+              - { name: url, label: "Link (web address or Google Drive link). Leave empty to show 'coming soon'.", type: string }
+
   # ── Business details ──
   - name: site
     label: "Business details"

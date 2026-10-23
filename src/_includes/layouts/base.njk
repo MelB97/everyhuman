@@ -129,13 +129,13 @@
       <p>{{ icon("info") }} <span>{{ site.clothing_note }} <a href="{{ site.clothing_link }}" rel="noopener nofollow">Visit their website</a></span></p>
     </div>
     <div class="wrap ftr-base">
-      <p>&copy; {{ "" | year }} {{ site.legal_name or site.business_name }}{% if site.abn %} &middot; ABN {{ site.abn | abn }}{% endif %}</p>
+      <p><a class="ftr-copy" href="/staff/">Copyright &copy; {{ "" | year }} {{ site.legal_name or site.business_name }}. All rights reserved.</a>{% if site.abn %} &middot; ABN {{ site.abn | abn }}{% endif %}</p>
       <p>We acknowledge the Traditional Custodians of the lands where we live and work, and pay our respects to Elders past and present.</p>
       <p><a href="/privacy-policy/">Privacy policy</a> &middot; <a href="/contact-us/#feedback">Feedback and complaints</a></p>
     </div>
   </footer>
 
-  {%- if callable %}
+  {%- if callable and not page.url.startsWith("/staff/") %}
   <a class="call-fab" href="{{ site.phone | telLink }}" aria-label="Call {{ site.phone }}">{{ icon("phone") }}<span>Call us</span></a>
   {%- endif %}
   <script src="/js/site.js" defer></script>

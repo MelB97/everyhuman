@@ -75,6 +75,23 @@ export default function (eleventyConfig) {
   });
 
   eleventyConfig.addCollection("services", (api) => api.getFilteredByGlob("src/services/*.md").sort(byOrder));
+  eleventyConfig.addCollection("induction", (api) => api.getFilteredByGlob("src/induction/*.md").sort(byOrder));
+  // Induction questions for the page script. Answers are lightly encoded so they aren't sitting in plain view.
+  eleventyConfig.addFilter("inductionData", (sections) =>
+    Buffer.from(
+      JSON.stringify(
+        (sections || []).map((s) =>
+          (s.data.questions || []).map((q) => ({
+            q: q.question,
+            n: q.note || "",
+            o: (q.options || []).map((o) => o.text),
+            c: (q.options || []).map((o, i) => (o.correct ? i : -1)).filter((i) => i >= 0),
+          }))
+        )
+      ),
+      "utf8"
+    ).toString("base64")
+  );
   eleventyConfig.addCollection("locations", (api) => api.getFilteredByGlob("src/locations/*.md").sort(byOrder));
 
   // Team: one file per person in src/team. Office team first, then everyone else, A to Z by name.
