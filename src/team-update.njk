@@ -42,17 +42,16 @@ eleventyExcludeFromCollections: true
               <option>Support Worker</option>
               <option>Senior Support Worker</option>
               <option>Team Leader</option>
-              <option>Office team</option>
-              <option>Management</option>
+              <option>Admin</option>
+              <option>Manager</option>
               <option>Other (say below)</option>
             </select>
           </div>
           <div class="field">
-            <label for="t-loc">Location</label>
+            <label for="t-loc">Based in</label>
             <select id="t-loc" name="person_location">
               <option value="">Choose one</option>
               {%- for l in collections.locations %}<option>{{ l.data.team_location }}</option>{% endfor %}
-              <option>All locations</option>
             </select>
           </div>
         </div>

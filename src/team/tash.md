@@ -1,8 +1,10 @@
 ---
 name: Tash
-title: Office team
+title: Area Manager & Operations Coordinator
 team: Office team
-location: Wollongong, NSW
+order: 2
+based: Illawarra, NSW
+all_locations: true
 photo: ""
 bio: ""
 show: true

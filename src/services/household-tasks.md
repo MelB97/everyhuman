@@ -5,7 +5,6 @@ order: 4
 icon: home
 summary: Cleaning, laundry, meal prep and keeping your home safe and comfortable.
 lead: A clean, comfortable home makes everything easier. We'll help with the jobs that have become hard to manage.
-funding: [NDIS, Aged care, Private]
 seo_title: Household Tasks & Cleaning Support | Every Human Support Services
 seo_description: In-home help with cleaning, laundry, linen, meal preparation and keeping your home safe and comfortable, for NDIS participants and older Australians.
 image: /images/uploads/service-kitchen.jpg

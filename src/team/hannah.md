@@ -1,8 +1,10 @@
 ---
 name: Hannah
-title: Office team
+title: Admin
 team: Office team
-location: All locations
+order: 4
+based: Illawarra, NSW
+all_locations: false
 photo: ""
 bio: ""
 show: true

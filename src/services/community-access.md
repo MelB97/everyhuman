@@ -5,7 +5,6 @@ order: 2
 icon: community
 summary: Get out and about, catch up with friends, try new activities and feel part of your local community.
 lead: Life is better with people around you. We'll help you get out, try new things and stay connected with your community.
-funding: [NDIS, Aged care, Private]
 seo_title: Community Access & Social Support | Every Human Support Services
 seo_description: Community participation and social outings with a friendly support worker. Shopping, hobbies, sport, events, classes and catching up with friends.
 image: /images/uploads/service-waterfall.jpg

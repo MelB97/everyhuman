@@ -5,7 +5,6 @@ order: 1
 icon: personal
 summary: Help with showering, dressing, grooming and getting ready for the day, at your pace and with dignity.
 lead: Gentle, respectful help with the everyday things, so you can start each day feeling comfortable and like yourself.
-funding: [NDIS, Aged care, Private]
 seo_title: Personal Care Support | Every Human Support Services
 seo_description: Respectful personal care at home, including showering, dressing, grooming and medication prompts, for NDIS participants, older Australians and private clients.
 image: /images/uploads/service-mealtime.jpg

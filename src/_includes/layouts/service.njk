@@ -9,7 +9,6 @@ layout: layouts/base.njk
       <p class="crumb"><a href="/services/">Services</a></p>
       <h1>{{ title }}</h1>
       <p class="lead">{{ lead }}</p>
-      <p class="tags tags-lg">{% for f in funding %}<span>{{ f }}</span>{% endfor %}</p>
       <div class="btns">
         <a class="btn btn-go" href="/contact-us/">Get started</a>
         {%- if callable %}<a class="btn btn-line" href="{{ site.phone | telLink }}">Call {{ site.phone }}</a>{% endif %}

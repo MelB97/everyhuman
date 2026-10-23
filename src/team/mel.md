@@ -1,8 +1,10 @@
 ---
 name: Mel
-title: Office team
+title: CEO
 team: Office team
-location: Logan, QLD
+order: 1
+based: Gold Coast, QLD
+all_locations: true
 photo: ""
 bio: ""
 show: true

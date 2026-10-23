@@ -18,7 +18,7 @@ eleventyComputed:
         <a class="btn btn-go" href="/contact-us/">Get started</a>
         <a class="btn btn-line" href="/referrals/">Make a referral</a>
       </div>
-      <p class="hero-where">{{ icon("pin") }} {% for l in collections.locations %}<a href="{{ l.url }}">{{ l.data.title }}</a>{% if not loop.last %}<span aria-hidden="true"> · </span>{% endif %}{% endfor %}{% if callable %}<span class="hero-call"> {{ icon("phone") }} <a href="{{ site.phone | telLink }}">{{ site.phone }}</a></span>{% endif %}</p>
+      <p class="hero-where">{{ icon("pin") }} {% for l in collections.locations %}<a href="{{ l.url }}">{{ l.data.short_title or l.data.title }}</a>{% if not loop.last %}<span aria-hidden="true"> · </span>{% endif %}{% endfor %}{% if callable %}<span class="hero-call"> {{ icon("phone") }} <a href="{{ site.phone | telLink }}">{{ site.phone }}</a></span>{% endif %}</p>
     </div>
     <div class="hero-art">
       <ul class="hex-cluster">

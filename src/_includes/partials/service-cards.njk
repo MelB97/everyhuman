@@ -6,7 +6,6 @@
     <div class="card-body">
       <h3><a class="card-link" href="{{ s.url }}">{{ s.data.title }}</a></h3>
       <p>{{ s.data.summary }}</p>
-      <p class="tags">{% for f in s.data.funding %}<span>{{ f }}</span>{% endfor %}</p>
     </div>
   </li>
   {%- endfor %}

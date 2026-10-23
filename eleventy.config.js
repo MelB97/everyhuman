@@ -84,12 +84,12 @@ export default function (eleventyConfig) {
       .sort((a, b) => {
         const ga = a.data.team === "Office team" ? 0 : 1;
         const gb = b.data.team === "Office team" ? 0 : 1;
-        return ga - gb || String(a.data.name).localeCompare(String(b.data.name));
+        return ga - gb || (a.data.order ?? 99) - (b.data.order ?? 99) || String(a.data.name).localeCompare(String(b.data.name));
       })
   );
 
   eleventyConfig.addFilter("inLocation", (team, loc) =>
-    (team || []).filter((t) => t.data.location === loc || t.data.location === "All locations")
+    (team || []).filter((t) => t.data.based === loc || t.data.all_locations === true)
   );
   eleventyConfig.addFilter("initials", (name) =>
     String(name || "")

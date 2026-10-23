@@ -5,7 +5,6 @@ order: 3
 icon: skills
 summary: Build confidence with cooking, budgeting, routines, getting around and the other skills that matter to you.
 lead: Learning new skills at your own pace, with someone cheering you on, so you can do more of what you want, your way.
-funding: [NDIS, Private]
 seo_title: Life Skills & Independence Support | Every Human Support Services
 seo_description: NDIS life skills development, including cooking, budgeting, routines, using public transport and building confidence at home and in the community.
 image: /images/uploads/service-trifle.jpg

@@ -5,7 +5,6 @@ order: 6
 icon: transitions
 summary: Extra support when life shifts, like moving home, leaving school or changes in health or family.
 lead: Big changes can be a lot. We'll help you plan, connect with the right supports and keep things steady along the way.
-funding: [NDIS, Private]
 seo_title: Life Transition Support | Every Human Support Services
 seo_description: Help coordinating supports and managing big life changes, such as moving home, leaving school, starting work or changes in health.
 image: /images/uploads/service-new-home.jpg

@@ -3,7 +3,7 @@
   <li class="card card-photo loc-card">
     <div class="card-img">{% img l.data.image, l.data.image_alt, "(max-width: 640px) 92vw, 380px" %}</div>
     <div class="card-body">
-      <p class="loc-state">{{ l.data.region }}, {{ l.data.state }}</p>
+      <p class="loc-state">{{ l.data.region }} {{ l.data.state }}</p>
       <h3><a class="card-link" href="{{ l.url }}">{{ l.data.title }}</a></h3>
       <p>{{ l.data.summary }}</p>
     </div>

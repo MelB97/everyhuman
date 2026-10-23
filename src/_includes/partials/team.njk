@@ -7,7 +7,8 @@
     </div>
     <h3>{{ t.data.name }}</h3>
     <p class="person-role">{{ t.data.title }}</p>
-    <p class="person-loc">{{ t.data.location }}</p>
+    {%- if t.data.all_locations %}<p class="person-loc person-all">All locations</p>{% endif %}
+    {%- if t.data.based %}<p class="person-loc"><span class="sr">Based in </span><svg class="pin" viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 21s-7-6.2-7-11.5a7 7 0 0 1 14 0C19 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/></svg> {{ t.data.based }}</p>{% endif %}
     {%- if t.data.bio %}<p class="person-about">{{ t.data.bio }}</p>{% endif %}
   </li>
   {%- endfor %}

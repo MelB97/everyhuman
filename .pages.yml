@@ -23,7 +23,7 @@ content:
     filename: "{primary}.md"
     view:
       primary: name
-      fields: [name, title, location, show]
+      fields: [name, title, based, show]
       sort: [name]
     fields:
       - name: name
@@ -37,7 +37,7 @@ content:
         required: true
         default: "Support Worker"
         options:
-          values: ["Support Worker", "Senior Support Worker", "Team Leader", "Office team", "Management", "Director"]
+          values: ["CEO", "Area Manager & Operations Coordinator", "Manager NSW", "Manager QLD", "Admin", "Team Leader", "Senior Support Worker", "Support Worker"]
       - name: team
         label: "Which group are they shown in?"
         type: select
@@ -45,12 +45,21 @@ content:
         default: "Support team"
         options:
           values: ["Support team", "Office team"]
-      - name: location
-        label: "Location"
+      - name: based
+        label: "Based in"
         type: select
         required: true
         options:
-          values: ["Logan, QLD", "Wollongong, NSW", "Ulladulla, NSW", "All locations"]
+          values: ["Illawarra, NSW", "South Coast, NSW", "Logan, QLD", "Gold Coast, QLD"]
+      - name: all_locations
+        label: "Covers all locations"
+        type: boolean
+        default: false
+        description: "Tick for people who work across every location, e.g. managers."
+      - name: order
+        label: "Order (optional)"
+        type: number
+        description: "Lower numbers show first. Leave empty to sort by name."
       - name: photo
         label: "Photo (optional)"
         type: image
@@ -249,12 +258,6 @@ content:
       - { name: lead, label: "Intro under the heading", type: text }
       - { name: image, label: "Photo", type: image, options: { media: images } }
       - { name: image_alt, label: "Describe the photo (read aloud to blind visitors)", type: string, required: true, description: "One short sentence about who is in it and what they are doing, e.g. A support worker and client feeding an alpaca." }
-      - name: funding
-        label: "Funding types"
-        type: select
-        options:
-          values: ["NDIS", "Aged care", "Private"]
-          multiple: true
       - { name: seo_title, label: "Google title", type: string }
       - { name: seo_description, label: "Google description", type: text }
       - { name: body, label: "Page content", type: rich-text }
@@ -270,7 +273,8 @@ content:
       fields: [title, state]
       sort: [order]
     fields:
-      - { name: title, label: "Town or city", type: string, required: true }
+      - { name: title, label: "Town or area (page heading)", type: string, required: true }
+      - { name: short_title, label: "Short name (used in the list under the top heading)", type: string }
       - { name: state, label: State, type: select, options: { values: [QLD, NSW] } }
       - { name: region, label: Region, type: string }
       - { name: order, label: "Order in lists", type: number }

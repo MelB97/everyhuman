@@ -1,9 +1,10 @@
 ---
 title: Ulladulla
+short_title: Ulladulla
 state: NSW
 region: South Coast
-order: 3
-team_location: Ulladulla, NSW
+order: 2
+team_location: South Coast, NSW
 area: Ulladulla and the Shoalhaven
 summary: Local support for Ulladulla and the Shoalhaven on the NSW South Coast.
 lead: Local support on the South Coast, helping people around Ulladulla and the Shoalhaven stay independent and connected.

@@ -1,9 +1,10 @@
 ---
 title: Wollongong
+short_title: Wollongong
 state: NSW
 region: Illawarra
-order: 2
-team_location: Wollongong, NSW
+order: 1
+team_location: Illawarra, NSW
 area: Wollongong and the Illawarra
 summary: Supporting people across Wollongong and the Illawarra, with our head office in Port Kembla.
 lead: Friendly, local support across Wollongong and the Illawarra, from our head office in Port Kembla.

@@ -1,8 +1,10 @@
 ---
 name: Dee
-title: Management
+title: Manager NSW
 team: Office team
-location: All locations
+order: 3
+based: Illawarra, NSW
+all_locations: false
 photo: ""
 bio: ""
 show: true
