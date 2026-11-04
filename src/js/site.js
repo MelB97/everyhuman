@@ -52,7 +52,13 @@
   function update() {
     var picked = form.querySelector("input[name=request]:checked");
     var v = picked ? picked.value : "";
-    Object.keys(parts).forEach(function (k) { parts[k].hidden = (show[v] || []).indexOf(k) === -1; });
+    Object.keys(parts).forEach(function (k) {
+      var off = (show[v] || []).indexOf(k) === -1;
+      parts[k].hidden = off;
+      // Hidden questions aren't sent, so the email only shows what applies
+      parts[k].querySelectorAll("input, select, textarea").forEach(function (el) { el.disabled = off; });
+      if (parts[k].matches("input, select, textarea, button")) parts[k].disabled = off;
+    });
     form.querySelectorAll("input, select, textarea").forEach(function (el) {
       if (el.name === "request" || el.name === "requested_by" || el.name === "bot-field" || el.type === "hidden") return;
       el.required = (need[v] || []).indexOf(el.name) !== -1;
