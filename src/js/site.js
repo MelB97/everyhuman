@@ -39,7 +39,7 @@
   form.querySelectorAll("[data-part]").forEach(function (el) { parts[el.getAttribute("data-part")] = el; });
   var show = {
     "Add a new team member": ["person", "details", "consent", "notes", "submit"],
-    "Remove a team member": ["person", "leaving", "notes", "submit"],
+    "Remove a team member": ["person", "notes", "submit"],
     "Update a team member": ["person", "details", "consent", "notes", "submit"],
     "Other website change": ["other", "notes", "submit"]
   };

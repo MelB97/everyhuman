@@ -24,7 +24,7 @@ eleventyExcludeFromCollections: true
       <fieldset class="choice">
         <legend>What do you need?</legend>
         <label class="choice-btn"><input type="radio" name="request" value="Add a new team member" required> <span><strong>Add someone</strong>A new person for the team page</span></label>
-        <label class="choice-btn"><input type="radio" name="request" value="Remove a team member"> <span><strong>Remove someone</strong>They've left or don't want to be shown</span></label>
+        <label class="choice-btn"><input type="radio" name="request" value="Remove a team member"> <span><strong>Remove someone</strong>They've left or don't want to be shown. We'll take them off straight away.</span></label>
         <label class="choice-btn"><input type="radio" name="request" value="Update a team member"> <span><strong>Change details</strong>New photo, job title or location</span></label>
         <label class="choice-btn"><input type="radio" name="request" value="Other website change"> <span><strong>Something else</strong>Any other change to the website</span></label>
       </fieldset>
@@ -65,9 +65,6 @@ eleventyExcludeFromCollections: true
         <label class="check check-consent" data-part="consent"><input type="checkbox" name="consent" value="Yes"> They've said they're happy to be on the website with this photo and information.</label>
       </div>
 
-      <div data-part="leaving" hidden>
-        <div class="field"><label for="t-last">Their last day <span class="opt">(optional)</span></label><input id="t-last" name="last_day" type="date"></div>
-      </div>
 
       <div data-part="other" hidden>
         <div class="field"><label for="t-page">Which page?</label>
