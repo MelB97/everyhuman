@@ -27,10 +27,10 @@ content:
       sort: [name]
     fields:
       - name: name
-        label: "Name (as it should appear)"
+        label: "First name"
         type: string
         required: true
-        description: "First name and last initial is fine, e.g. Sarah M."
+        description: "First name only. Add a last initial only if two people share a first name, e.g. Lily H."
       - name: title
         label: "Job title"
         type: select
