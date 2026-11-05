@@ -92,7 +92,7 @@ If your information is lost or accessed without permission, and this is likely t
 
 ## Questions and complaints
 
-If you have a question or a complaint about how we've handled your personal information, please contact our privacy officer:
+If you have a question or a complaint about how we've handled your personal information, please contact our admin team, who look after privacy questions and complaints:
 
 <div class="contact-list">
 <div><strong>Every Human Support Services</strong>{% if site.phone | hasPhone %}<a href="{{ site.phone | telLink }}">{{ site.phone }}</a> &middot; {% endif %}<a href="mailto:{{ site.email }}">{{ site.email }}</a></div>
