@@ -1,0 +1,49 @@
+---
+layout: layouts/base.njk
+permalink: /feedback-and-complaints/easy-read/
+title: Feedback and complaints – Easy Read
+seo_title: Feedback and Complaints (Easy Read) | Every Human Support Services
+seo_description: An Easy Read guide to giving feedback or making a complaint to Every Human Support Services.
+---
+{%- from "partials/icons.njk" import icon -%}
+{%- from "partials/easyread.njk" import er -%}
+<section class="page-hd"><div class="wrap er"><h1>Feedback and complaints</h1><p class="lead">How to tell us what you think. Easy Read.</p></div></section>
+<section class="sec"><div class="wrap er">
+
+<div class="ver-switch">{{ icon("doc") }}<p>This is the Easy Read version. You can also <a href="/feedback-and-complaints/">read the full version</a>.</p></div>
+
+<h2>We want to hear from you</h2>
+{% call er("chat") %}<p>You can tell us what you think about your support.</p><p>This is called <strong>feedback</strong>.</p>{% endcall %}
+{% call er("alert") %}<p>You can tell us if you are not happy.</p><p>This is called a <strong>complaint</strong>.</p>{% endcall %}
+{% call er("community") %}<p>Anyone can give feedback or make a complaint.</p>{% endcall %}
+
+<h2>It is safe to tell us</h2>
+{% call er("shield") %}<p>Your support will <strong>not</strong> change because you made a complaint.</p>{% endcall %}
+{% call er("lock") %}<p>We will keep your complaint private.</p><p>You do not have to tell us your name if you do not want to.</p>{% endcall %}
+
+<h2>How to tell us</h2>
+{% call er("phone") %}<p>Call us on <a href="{{ site.phone | telLink }}">{{ site.phone }}</a></p>{% endcall %}
+{% call er("mail") %}<p>Email us at <a href="mailto:{{ site.email }}">{{ site.email }}</a></p>{% endcall %}
+{% call er("computer") %}<p>Fill in the form on our <a href="/contact-us/">contact page</a>.</p>{% endcall %}
+{% call er("personal") %}<p>Talk to your support worker or a manager.</p>{% endcall %}
+
+<h2>Getting help</h2>
+{% call er("help") %}<p>A family member, friend or <strong>advocate</strong> can help you.</p><p class="er-word">An <strong>advocate</strong> is a person who helps you speak up.</p>{% endcall %}
+{% call er("chat") %}<p>We can get you a free <strong>interpreter</strong>.</p><p>Call <a href="tel:131450">131 450</a></p><p class="er-word">An <strong>interpreter</strong> helps people who speak different languages understand each other.</p>{% endcall %}
+
+<h2>What we will do</h2>
+{% call er("check") %}<p>We will tell you we got your complaint within 2 working days.</p>{% endcall %}
+{% call er("eye") %}<p>We will look into it.</p><p>We will ask you what you would like to happen.</p>{% endcall %}
+{% call er("clock") %}<p>We will try to fix it within 21 days.</p><p>We will tell you if it will take longer.</p>{% endcall %}
+{% call er("doc") %}<p>We will tell you what we decided.</p><p>We will tell you what we will do.</p>{% endcall %}
+
+<h2>If you are still not happy</h2>
+{% call er("law") %}<p>You can contact the <strong>NDIS Commission</strong>.</p><p>Call <a href="tel:1800035544">1800 035 544</a></p>{% endcall %}
+{% call er("aged") %}<p>For aged care, you can contact the <strong>Aged Care Quality and Safety Commission</strong>.</p><p>Call <a href="tel:1800951822">1800 951 822</a></p>{% endcall %}
+{% call er("community") %}<p>You can talk to them at any time.</p><p>You do not have to talk to us first.</p>{% endcall %}
+
+<h2>If someone is in danger</h2>
+{% call er("alert") %}<p>If someone is in danger <strong>right now</strong>, call <strong>000</strong>.</p>{% endcall %}
+
+<p class="policy-meta">Last updated: November 2026</p>
+</div></section>

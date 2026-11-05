@@ -1,0 +1,43 @@
+---
+layout: layouts/base.njk
+permalink: /child-safety/easy-read/
+title: Keeping children safe – Easy Read
+seo_title: Keeping Children Safe (Easy Read) | Every Human Support Services
+seo_description: An Easy Read guide for children, young people and families about how Every Human Support Services keeps children safe.
+---
+{%- from "partials/icons.njk" import icon -%}
+{%- from "partials/easyread.njk" import er -%}
+<section class="page-hd"><div class="wrap er"><h1>Keeping children safe</h1><p class="lead">For children, young people and families. Easy Read.</p></div></section>
+<section class="sec"><div class="wrap er">
+
+<div class="ver-switch">{{ icon("doc") }}<p>This is the Easy Read version. You can also <a href="/child-safety/">read the full version</a>.</p></div>
+
+<h2>You have the right to be safe</h2>
+{% call er("child") %}<p>Every child and young person has the right to be safe.</p>{% endcall %}
+{% call er("shield") %}<p>Nobody is allowed to hurt you.</p><p>That includes hurting your body or your feelings.</p>{% endcall %}
+{% call er("chat") %}<p>You have the right to say what you think.</p><p>We will listen to you.</p>{% endcall %}
+{% call er("smile") %}<p>You have the right to be treated with respect.</p><p>It does not matter where you come from, what you believe or what your body can do.</p>{% endcall %}
+
+<h2>What our workers must do</h2>
+{% call er("check") %}<p>Our workers have a special check to make sure they are safe to work with children.</p><p>In Queensland this is called a <strong>blue card</strong>.</p>{% endcall %}
+{% call er("personal") %}<p>Our workers must:</p><ul><li>be kind and respectful</li><li>listen to you</li><li>use nice words</li><li>keep you safe.</li></ul>{% endcall %}
+{% call er("alert") %}<p>Our workers must <strong>never</strong>:</p><ul><li>hurt you</li><li>scare you or make you feel bad</li><li>ask you to keep secrets from your family.</li></ul>{% endcall %}
+
+<h2>If you feel unsafe</h2>
+{% call er("community") %}<p>If something does not feel right, tell an adult you trust.</p><p>This could be your mum, dad, carer, teacher or one of our workers.</p>{% endcall %}
+{% call er("lock") %}<p>It is <strong>not</strong> your fault.</p><p>You will <strong>not</strong> get in trouble for telling.</p>{% endcall %}
+{% call er("phone") %}<p>You or your family can call us on <a href="{{ site.phone | telLink }}">{{ site.phone }}</a></p>{% endcall %}
+{% call er("chat") %}<p>You can talk to <strong>Kids Helpline</strong> any time, day or night.</p><p>Call <a href="tel:1800551800">1800 55 1800</a></p><p>It is free.</p>{% endcall %}
+{% call er("alert") %}<p>If you are in danger <strong>right now</strong>, call <strong>000</strong>.</p>{% endcall %}
+
+<h2>What we will do</h2>
+{% call er("eye") %}<p>We will take what you tell us seriously.</p>{% endcall %}
+{% call er("shield") %}<p>We will act quickly to keep you safe.</p>{% endcall %}
+{% call er("law") %}<p>Sometimes we must tell people whose job is to keep children safe, like the police.</p>{% endcall %}
+
+<h2>For families</h2>
+{% call er("home") %}<p>You can tell us about any worry you have about a child's safety.</p><p>Call <a href="{{ site.phone | telLink }}">{{ site.phone }}</a> or email <a href="mailto:{{ site.email }}">{{ site.email }}</a></p>{% endcall %}
+{% call er("doc") %}<p>You can ask us for a copy of our child safety policy.</p><p>It is free.</p>{% endcall %}
+
+<p class="policy-meta">Last updated: November 2026</p>
+</div></section>

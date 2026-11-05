@@ -1,0 +1,47 @@
+---
+layout: layouts/base.njk
+permalink: /privacy-policy/easy-read/
+title: Privacy policy – Easy Read
+seo_title: Privacy Policy (Easy Read) | Every Human Support Services
+seo_description: An Easy Read guide to how Every Human Support Services looks after your personal information.
+---
+{%- from "partials/icons.njk" import icon -%}
+{%- from "partials/easyread.njk" import er -%}
+<section class="page-hd"><div class="wrap er"><h1>Privacy</h1><p class="lead">How we look after your information. Easy Read.</p></div></section>
+<section class="sec"><div class="wrap er">
+
+<div class="ver-switch">{{ icon("doc") }}<p>This is the Easy Read version. You can also <a href="/privacy-policy/">read the full privacy policy</a>.</p></div>
+
+<h2>About this page</h2>
+{% call er("personal") %}<p>We are Every Human Support Services.</p><p>We give support in NSW and Queensland.</p>{% endcall %}
+{% call er("lock") %}<p>This page tells you how we keep your information <strong>private</strong>.</p><p class="er-word"><strong>Private</strong> means we keep your information safe. We only share it when we need to.</p>{% endcall %}
+{% call er("help") %}<p>You can ask someone you trust to help you read this.</p>{% endcall %}
+
+<h2>What information we keep</h2>
+{% call er("doc") %}<p>We keep information about you, like:</p><ul><li>your name and address</li><li>your phone number</li><li>your NDIS or aged care details</li><li>your health and support needs</li><li>who to call in an emergency.</li></ul>{% endcall %}
+{% call er("chat") %}<p>We get most information from you.</p><p>Sometimes we get it from people who help you, like your support coordinator. We ask you first.</p>{% endcall %}
+
+<h2>Why we need it</h2>
+{% call er("check") %}<p>We use your information to:</p><ul><li>give you good support</li><li>keep you safe</li><li>get paid for your support</li><li>follow the law.</li></ul>{% endcall %}
+{% call er("smile") %}<p>We will <strong>not</strong> sell your information.</p><p>We will <strong>not</strong> use your photo unless you say yes.</p><p>You can change your mind at any time.</p>{% endcall %}
+
+<h2>Who we share it with</h2>
+{% call er("share") %}<p>We only share your information when we need to.</p><p>For example, with:</p><ul><li>people you say we can share with</li><li>the NDIS or your plan manager</li><li>a doctor or ambulance in an emergency.</li></ul>{% endcall %}
+{% call er("law") %}<p>Sometimes the law says we must share information.</p><p>For example, if someone might be hurt.</p>{% endcall %}
+
+<h2>How we keep it safe</h2>
+{% call er("computer") %}<p>We keep your information on a safe computer system called <strong>Astalty</strong>.</p><p>Astalty keeps it in Australia.</p>{% endcall %}
+{% call er("shield") %}<p>Only staff who need your information can see it.</p><p>We use passwords to keep it safe.</p>{% endcall %}
+{% call er("clock") %}<p>We keep your information for about 7 years.</p><p>Then we safely delete it.</p>{% endcall %}
+{% call er("alert") %}<p>If your information gets into the wrong hands, we will tell you.</p><p>We will try to fix the problem.</p>{% endcall %}
+
+<h2>Your rights</h2>
+{% call er("eye") %}<p>You can ask to see the information we have about you.</p><p>It is free.</p>{% endcall %}
+{% call er("check") %}<p>You can ask us to fix information that is wrong.</p>{% endcall %}
+
+<h2>If you are not happy</h2>
+{% call er("phone") %}<p>Tell us if you are not happy with how we look after your information.</p><p>Call <a href="{{ site.phone | telLink }}">{{ site.phone }}</a></p><p>Email <a href="mailto:{{ site.email }}">{{ site.email }}</a></p>{% endcall %}
+{% call er("community") %}<p>If you are still not happy, you can contact the <strong>Office of the Australian Information Commissioner</strong>.</p><p>Call <a href="tel:1300363992">1300 363 992</a></p><p>Website <a href="https://www.oaic.gov.au" rel="noopener">oaic.gov.au</a></p>{% endcall %}
+
+<p class="policy-meta">Last updated: November 2026</p>
+</div></section>

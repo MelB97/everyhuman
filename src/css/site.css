@@ -426,6 +426,34 @@ select{appearance:none;background-image:url("data:image/svg+xml,%3Csvg xmlns='ht
   .menu-open .call-fab{display:none}
   .btns .btn{flex:1 1 100%}
 }
+/* Policy pages and Easy Read versions */
+.ver-switch{display:flex;gap:12px;align-items:center;padding:14px 18px;border-radius:14px;background:var(--teal-lt);margin:0 0 28px}
+.ver-switch .ico{color:var(--teal);flex:none}
+.ver-switch p{margin:0}
+.policy-meta{color:var(--ink-2);font-size:.95rem;margin-top:2.4em;padding-top:1em;border-top:1px solid var(--line)}
+.contact-list{display:grid;gap:12px;margin:0 0 1.4em}
+.contact-list>div{padding:14px 18px;background:#fff;border:1px solid var(--line);border-radius:14px}
+.contact-list strong{display:block}
+.er{max-width:860px}
+.er h2{font-size:clamp(1.6rem,2.6vw,2rem);margin:1.6em 0 .4em}
+.er h2:first-child{margin-top:0}
+.er-row{display:grid;grid-template-columns:104px 1fr;gap:26px;align-items:center;padding:20px 0;border-bottom:1px solid var(--line)}
+.er-ico{width:104px;height:104px;border-radius:26px;background:var(--teal-lt);color:var(--teal);display:grid;place-items:center}
+.er-row:nth-of-type(3n+2) .er-ico{background:var(--sun-lt);color:#7a5200}
+.er-row:nth-of-type(3n) .er-ico{background:var(--coral-lt);color:var(--coral-ink)}
+.er-ico .ico{width:60px;height:60px;stroke-width:1.6}
+.er-txt{font-size:clamp(1.2rem,1.9vw,1.4rem);line-height:1.55}
+.er-txt p{margin:0 0 .45em}
+.er-txt p:last-child{margin-bottom:0}
+.er-txt ul{margin:.2em 0 .45em;padding-left:1.1em}
+.er-txt a{font-weight:700}
+.er-word{padding:16px 20px;border-radius:14px;background:var(--sun-lt);border:2px solid var(--sun);font-size:1.15rem;margin:10px 0 0}
+@media (max-width:640px){
+  .er-row{grid-template-columns:68px 1fr;gap:16px}
+  .er-ico{width:68px;height:68px;border-radius:18px}
+  .er-ico .ico{width:40px;height:40px}
+}
+
 @media (prefers-reduced-motion:reduce){*{scroll-behavior:auto!important;transition:none!important}}
 /* Service boxes: every box the same height, whichever row it's in */
 @media (min-width:961px){.svc-cards{display:grid;grid-template-columns:repeat(8,1fr);grid-auto-rows:1fr}.svc-cards>li{grid-column:span 2}.svc-cards>li:nth-child(5){grid-column:2/span 2}}

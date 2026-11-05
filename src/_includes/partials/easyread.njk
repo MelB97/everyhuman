@@ -1,0 +1,7 @@
+{#- Easy Read rows: a picture on the left, one short idea on the right.
+    Usage: {% from "partials/easyread.njk" import er %}
+           {% call er("phone") %}<p>Call us.</p>{% endcall %} -#}
+{%- from "partials/icons.njk" import icon -%}
+{%- macro er(name) -%}
+<div class="er-row"><span class="er-ico">{{ icon(name) }}</span><div class="er-txt">{{ caller() }}</div></div>
+{%- endmacro %}
