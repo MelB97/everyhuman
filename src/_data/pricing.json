@@ -1,0 +1,317 @@
+{
+  "intro": "No surprises. These are the hourly rates we charge, so you can plan your budget with confidence. If you have any questions about costs, give us a call and we'll talk it through.",
+  "updated": "Prices from 1 July 2026",
+  "groups": [
+    {
+      "heading": "NDIS supports",
+      "intro": "Our NDIS prices follow the NDIS Pricing Schedule 2026–27. We support agency, plan and self-managed participants.",
+      "sets": [
+        {
+          "name": "Personal care and daily living",
+          "detail": "Assistance with self-care activities",
+          "rates": [
+            {
+              "label": "Weekday daytime",
+              "price": "$73.58",
+              "unit": "per hour"
+            },
+            {
+              "label": "Weekday evening",
+              "price": "$81.07",
+              "unit": "per hour"
+            },
+            {
+              "label": "Weekday night",
+              "price": "$82.57",
+              "unit": "per hour"
+            },
+            {
+              "label": "Saturday",
+              "price": "$103.54",
+              "unit": "per hour"
+            },
+            {
+              "label": "Sunday",
+              "price": "$133.50",
+              "unit": "per hour"
+            },
+            {
+              "label": "Public holiday",
+              "price": "$163.46",
+              "unit": "per hour"
+            },
+            {
+              "label": "Sleepover",
+              "price": "$311.79",
+              "unit": "per night"
+            },
+            {
+              "label": "Travel",
+              "price": "$1.05",
+              "unit": "per km"
+            }
+          ]
+        },
+        {
+          "name": "Community access",
+          "detail": "Access community, social and recreational activities",
+          "rates": [
+            {
+              "label": "Weekday daytime",
+              "price": "$73.58",
+              "unit": "per hour"
+            },
+            {
+              "label": "Weekday evening",
+              "price": "$81.07",
+              "unit": "per hour"
+            },
+            {
+              "label": "Saturday",
+              "price": "$103.54",
+              "unit": "per hour"
+            },
+            {
+              "label": "Sunday",
+              "price": "$133.50",
+              "unit": "per hour"
+            },
+            {
+              "label": "Public holiday",
+              "price": "$163.46",
+              "unit": "per hour"
+            },
+            {
+              "label": "Travel",
+              "price": "$1.05",
+              "unit": "per km"
+            }
+          ]
+        },
+        {
+          "name": "Community access in a modified vehicle",
+          "detail": "Same hourly rates, with travel in a wheelchair-accessible vehicle",
+          "rates": [
+            {
+              "label": "Weekday daytime",
+              "price": "$73.58",
+              "unit": "per hour"
+            },
+            {
+              "label": "Weekday evening",
+              "price": "$81.07",
+              "unit": "per hour"
+            },
+            {
+              "label": "Saturday",
+              "price": "$103.54",
+              "unit": "per hour"
+            },
+            {
+              "label": "Sunday",
+              "price": "$133.50",
+              "unit": "per hour"
+            },
+            {
+              "label": "Public holiday",
+              "price": "$163.46",
+              "unit": "per hour"
+            },
+            {
+              "label": "Travel",
+              "price": "$2.76",
+              "unit": "per km"
+            }
+          ]
+        },
+        {
+          "name": "Life skills and public transport training",
+          "detail": "Skill development and training (Improved Daily Living)",
+          "rates": [
+            {
+              "label": "Any day or time",
+              "price": "$73.58",
+              "unit": "per hour"
+            }
+          ]
+        },
+        {
+          "name": "Social skills development",
+          "detail": "Skills development and training (Increased Social and Community Participation)",
+          "rates": [
+            {
+              "label": "Any day or time",
+              "price": "$83.87",
+              "unit": "per hour"
+            },
+            {
+              "label": "Travel",
+              "price": "$1.05",
+              "unit": "per km"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "heading": "Aged care",
+      "intro": "For older Australians receiving support through aged care brokerage.",
+      "sets": [
+        {
+          "name": "Daily support",
+          "detail": "Shifts of 2 hours or more",
+          "rates": [
+            {
+              "label": "Weekday daytime",
+              "price": "$79.69",
+              "unit": "per hour"
+            },
+            {
+              "label": "Weekday evening",
+              "price": "$90.09",
+              "unit": "per hour"
+            },
+            {
+              "label": "Saturday",
+              "price": "$111.12",
+              "unit": "per hour"
+            },
+            {
+              "label": "Sunday",
+              "price": "$143.27",
+              "unit": "per hour"
+            },
+            {
+              "label": "Public holiday",
+              "price": "$176.38",
+              "unit": "per hour"
+            },
+            {
+              "label": "Sleepover",
+              "price": "$297.60",
+              "unit": "per night"
+            },
+            {
+              "label": "Travel",
+              "price": "$1.01",
+              "unit": "per km"
+            }
+          ]
+        },
+        {
+          "name": "Short visits",
+          "detail": "Shifts under 2 hours",
+          "rates": [
+            {
+              "label": "Weekday",
+              "price": "$119.54",
+              "unit": "per hour"
+            },
+            {
+              "label": "Saturday",
+              "price": "$135.14",
+              "unit": "per hour"
+            },
+            {
+              "label": "Sunday",
+              "price": "$166.68",
+              "unit": "per hour"
+            },
+            {
+              "label": "Public holiday",
+              "price": "$264.57",
+              "unit": "per hour"
+            },
+            {
+              "label": "Travel",
+              "price": "$1.01",
+              "unit": "per km"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "heading": "Private clients",
+      "intro": "No funding needed. Pay as you go for the support you choose.",
+      "sets": [
+        {
+          "name": "Daily support",
+          "detail": "Shifts of 2 hours or more",
+          "rates": [
+            {
+              "label": "Weekday daytime",
+              "price": "$78.58",
+              "unit": "per hour"
+            },
+            {
+              "label": "Weekday evening",
+              "price": "$82.57",
+              "unit": "per hour"
+            },
+            {
+              "label": "Saturday",
+              "price": "$103.54",
+              "unit": "per hour"
+            },
+            {
+              "label": "Sunday",
+              "price": "$133.50",
+              "unit": "per hour"
+            },
+            {
+              "label": "Public holiday",
+              "price": "$163.46",
+              "unit": "per hour"
+            },
+            {
+              "label": "Travel",
+              "price": "$1.05",
+              "unit": "per km"
+            }
+          ]
+        },
+        {
+          "name": "Short visits",
+          "detail": "Shifts under 2 hours",
+          "rates": [
+            {
+              "label": "Weekday daytime",
+              "price": "$110.37",
+              "unit": "per hour"
+            },
+            {
+              "label": "Weekday evening",
+              "price": "$110.37",
+              "unit": "per hour"
+            },
+            {
+              "label": "Saturday",
+              "price": "$110.37",
+              "unit": "per hour"
+            },
+            {
+              "label": "Sunday",
+              "price": "$133.50",
+              "unit": "per hour"
+            },
+            {
+              "label": "Public holiday",
+              "price": "$163.46",
+              "unit": "per hour"
+            },
+            {
+              "label": "Travel",
+              "price": "$1.05",
+              "unit": "per km"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "notes": [
+    "Travel is charged per kilometre your support worker drives during your support, and to and from it.",
+    "Prices may change each year, for example when the NDIS updates its price limits."
+  ]
+}

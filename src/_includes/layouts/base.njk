@@ -70,6 +70,7 @@
               {%- endfor %}
             </ul>
           </li>
+          <li><a href="/prices/"{% if page.url == "/prices/" %} aria-current="page"{% endif %}>Prices</a></li>
           <li><a href="/our-team/"{% if page.url == "/our-team/" %} aria-current="page"{% endif %}>Our team</a></li>
           <li><a href="/referrals/"{% if page.url == "/referrals/" %} aria-current="page"{% endif %}>Referrals</a></li>
           <li><a href="/careers/"{% if page.url == "/careers/" %} aria-current="page"{% endif %}>Careers</a></li>
@@ -101,6 +102,7 @@
         <p class="ftr-h">Services</p>
         <ul>
           {%- for s in collections.services %}<li><a href="{{ s.url }}">{{ s.data.nav_title }}</a></li>{% endfor %}
+          <li><a href="/prices/">Our prices</a></li>
         </ul>
       </div>
       <div class="ftr-col">

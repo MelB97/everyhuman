@@ -315,6 +315,44 @@ content:
       - { name: seo_description, label: "Google description", type: text }
       - { name: body, label: "Page content", type: rich-text }
 
+  # ── Prices ── the rates shown on the Prices page.
+  - name: pricing
+    label: "Prices"
+    type: file
+    path: src/_data/pricing.json
+    format: json
+    fields:
+      - { name: intro, label: "Intro under the heading", type: text }
+      - { name: updated, label: "Date line, e.g. Prices from 1 July 2026", type: string }
+      - name: groups
+        label: "Price groups"
+        type: object
+        list: true
+        fields:
+          - { name: heading, label: "Heading, e.g. NDIS supports", type: string, required: true }
+          - { name: intro, label: "Short intro", type: text }
+          - name: sets
+            label: "Price boxes"
+            type: object
+            list: true
+            fields:
+              - { name: name, label: "Box heading", type: string, required: true }
+              - { name: detail, label: "Small line under the heading", type: string }
+              - name: rates
+                label: "Rates"
+                type: object
+                list: true
+                fields:
+                  - { name: label, label: "When, e.g. Saturday", type: string, required: true }
+                  - { name: price, label: "Price, e.g. $103.54", type: string, required: true }
+                  - name: unit
+                    label: "Per"
+                    type: select
+                    default: "per hour"
+                    options:
+                      values: ["per hour", "per night", "per km", "per visit"]
+      - { name: notes, label: "Good to know (one point each)", type: string, list: true }
+
   # ── Locations ──
   - name: locations
     label: "Locations"

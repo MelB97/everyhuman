@@ -1,0 +1,52 @@
+---
+layout: layouts/base.njk
+permalink: /prices/
+title: Our prices
+seo_title: Prices | NDIS, Aged Care & Private Support | Every Human
+seo_description: Clear hourly rates for NDIS supports, aged care and private support from Every Human Support Services in Wollongong, Ulladulla, Logan and the Gold Coast.
+---
+<section class="page-hd">
+  <div class="wrap">
+    <h1>Our prices</h1>
+    <p class="lead">{{ pricing.intro }}</p>
+    {%- if pricing.updated %}<p class="price-upd">{{ pricing.updated }}</p>{% endif %}
+    {%- if pricing.groups.length > 1 %}
+    <nav class="price-jump" aria-label="Jump to">
+      {%- for g in pricing.groups %}<a href="#{{ g.heading | slug }}">{{ g.heading }}</a>{% endfor %}
+    </nav>
+    {%- endif %}
+  </div>
+</section>
+{%- for g in pricing.groups %}
+<section class="sec{% if loop.index0 % 2 %} sec-soft{% endif %} price-sec" id="{{ g.heading | slug }}">
+  <div class="wrap">
+    <div class="sec-hd">
+      <h2>{{ g.heading }}</h2>
+      {%- if g.intro %}<p class="lead">{{ g.intro }}</p>{% endif %}
+    </div>
+    <ul class="cards price-cards">
+      {%- for s in g.sets %}
+      <li class="card price-card">
+        <h3>{{ s.name }}</h3>
+        {%- if s.detail %}<p class="price-detail">{{ s.detail }}</p>{% endif %}
+        <dl class="price-list">
+          {%- for r in s.rates %}
+          <div><dt>{{ r.label }}</dt><dd><strong>{{ r.price }}</strong> <span>{{ r.unit }}</span></dd></div>
+          {%- endfor %}
+        </dl>
+      </li>
+      {%- endfor %}
+    </ul>
+  </div>
+</section>
+{%- endfor %}
+<section class="sec price-notes-sec">
+  <div class="wrap">
+    <h2 class="h-sm">Good to know</h2>
+    <ul class="price-notes">
+      {%- for n in pricing.notes %}<li>{{ n }}</li>{% endfor %}
+    </ul>
+    <p class="note-line">Questions about costs or your funding? <a href="/contact-us/">Get in touch</a> and we'll talk it through.</p>
+  </div>
+</section>
+{% include "partials/cta.njk" %}

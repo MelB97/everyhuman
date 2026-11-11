@@ -81,7 +81,7 @@ p{margin:0 0 1em}
 .brand-sub{font-size:.78rem;line-height:1.15;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--coral-ink);padding-left:12px;border-left:2px solid var(--line)}
 .nav{margin-left:auto}
 .nav>ul{display:flex;gap:2px;list-style:none;margin:0;padding:0}
-.nav a{display:block;padding:10px 12px;color:var(--ink);font-size:1rem;font-weight:700;text-decoration:none;border-radius:999px}
+.nav a{display:block;white-space:nowrap;padding:10px 12px;color:var(--ink);font-size:1rem;font-weight:700;text-decoration:none;border-radius:999px}
 .nav a:hover,.nav a[aria-current]{color:var(--coral-ink)}
 .has-sub{position:relative}
 .sub{position:absolute;left:0;top:100%;min-width:230px;list-style:none;margin:0;padding:8px;background:#fff;border:1px solid var(--line);border-radius:16px;box-shadow:0 20px 40px -24px rgba(62,95,34,.45);opacity:0;visibility:hidden;transform:translateY(4px);transition:opacity .15s,transform .15s,visibility .15s}
@@ -91,7 +91,7 @@ p{margin:0 0 1em}
 .hdr-act{display:flex;align-items:center;gap:10px}
 .hdr-call{display:inline-flex;align-items:center;gap:8px;font-weight:700;text-decoration:none;color:var(--teal);white-space:nowrap}
 .hdr-call .ico{width:20px;height:20px;color:var(--coral)}
-.hdr-cta{min-height:46px;padding:0 22px;font-size:1rem}
+.hdr-cta{white-space:nowrap;min-height:46px;padding:0 22px;font-size:1rem}
 .menu-btn{display:none;width:48px;height:48px;border:2px solid var(--line);border-radius:14px;background:#fff;cursor:pointer;flex-direction:column;align-items:center;justify-content:center;gap:5px}
 .menu-btn i{display:block;width:20px;height:2px;background:var(--teal);border-radius:2px}
 
@@ -374,12 +374,12 @@ select{appearance:none;background-image:url("data:image/svg+xml,%3Csvg xmlns='ht
 .call-fab{display:none}
 
 /* Tablet */
-@media (max-width:1100px){
+@media (max-width:1320px){
   .hdr-call span{display:none}
   .hdr-call{width:46px;height:46px;justify-content:center;border:2px solid var(--line);border-radius:14px;background:#fff}
   .nav a{padding:10px 9px;font-size:.97rem}
 }
-@media (max-width:960px){
+@media (max-width:1080px){
   .menu-btn{display:flex}
   .hdr-act{margin-left:auto}
   .nav{position:fixed;inset:84px 0 auto 0;background:var(--cream);border-bottom:1px solid var(--line);max-height:calc(100vh - 84px);overflow:auto;display:none;margin:0}
@@ -389,6 +389,8 @@ select{appearance:none;background-image:url("data:image/svg+xml,%3Csvg xmlns='ht
   .nav a{padding:14px 4px;font-size:1.12rem;border-radius:0}
   .sub{position:static;opacity:1;visibility:visible;transform:none;box-shadow:none;border:0;padding:0 0 10px 14px;background:transparent;min-width:0}
   .sub a{padding:8px 4px;font-size:1.02rem}
+}
+@media (max-width:960px){
   .hero-in,.values-in,.story,.svc-body,.loc-body,.contact-in,.two-col{grid-template-columns:1fr}
   .hero-art{order:-1;max-width:420px;margin:0 auto 30px}
   .page-hd-in,.story-rev{grid-template-columns:1fr}
@@ -538,3 +540,22 @@ select{appearance:none;background-image:url("data:image/svg+xml,%3Csvg xmlns='ht
 @media (max-width:640px){.ind-nav [data-save]{order:3;flex-basis:100%}}
 
 .card-astalty{background:var(--teal-lt);border-color:var(--leaf)}
+
+/* Prices page */
+.price-upd{margin:.4rem 0 0;font-weight:700;color:var(--coral-ink)}
+.price-jump{display:flex;flex-wrap:wrap;gap:10px;margin-top:1.4rem}
+.price-jump a{padding:8px 16px;border-radius:999px;background:#fff;border:1px solid var(--line);font-weight:700;text-decoration:none}
+.price-jump a:hover{border-color:var(--coral);color:var(--coral-ink)}
+.price-cards{grid-template-columns:repeat(auto-fill,minmax(300px,1fr));align-items:start}
+.price-card h3{font-size:1.4rem;margin-bottom:.2em}
+.price-card .price-detail{font-size:.95rem;margin-bottom:1rem}
+.price-list{margin:0}
+.price-list div{display:flex;justify-content:space-between;align-items:baseline;gap:12px;padding:9px 0;border-top:1px dashed var(--line)}
+.price-list dt{color:var(--ink-2)}
+.price-list dd{margin:0;text-align:right;white-space:nowrap}
+.price-list strong{color:var(--teal);font-size:1.1rem}
+.price-list span{font-size:.85rem;color:var(--ink-2)}
+.sec-soft .price-card{background:#fff}
+.price-notes{margin:0;padding-left:1.2em;color:var(--ink-2);max-width:70ch}
+.price-notes li{margin-bottom:.4em}
+.price-notes-sec{padding-bottom:clamp(40px,6vw,70px)}
