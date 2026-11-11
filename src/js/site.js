@@ -192,6 +192,28 @@
     form.querySelector('[data-f="sections"]').value = total + " of " + total;
     form.querySelector('[data-f="questions"]').value = Object.keys(state.done).length + " correct";
     form.querySelector('[data-f="wrong"]').value = String(state.wrong);
+    // Make the PDF certificate, attach it to the submission, then go to the thank you page.
+    if (!window.ehCertificate || !window.jspdf || !window.fetch || !window.FormData) return;
+    e.preventDefault();
+    var btn = form.querySelector("[data-ind-submit]"), status = form.querySelector("[data-ind-status]");
+    btn.disabled = true; status.textContent = "Sending, please wait...";
+    var name = form.elements.name.value.trim();
+    var date = new Date().toLocaleDateString("en-AU", { timeZone: "Australia/Brisbane", day: "numeric", month: "long", year: "numeric" });
+    var fallback = function () { HTMLFormElement.prototype.submit.call(form); };
+    window.ehCertificate({ name: name, date: date, location: form.elements.location.value, sections: total }).then(function (blob) {
+      var file = "Every Human induction certificate - " + name.replace(/[^\w .-]/g, "") + ".pdf";
+      var fd = new FormData(form);
+      fd.set("certificate", blob, file);
+      return fetch("/", { method: "POST", body: fd }).then(function (r) {
+        if (!r.ok) throw new Error(r.status);
+        return new Promise(function (res) {
+          var fr = new FileReader();
+          fr.onload = function () { try { sessionStorage.setItem("eh-cert", JSON.stringify({ name: file, data: fr.result })); } catch (x) {} res(); };
+          fr.onerror = res;
+          fr.readAsDataURL(blob);
+        });
+      });
+    }).then(function () { window.location.href = form.getAttribute("action"); }, fallback);
   });
   var panel = root.querySelector("[data-save-panel]");
   var linkBox = root.querySelector("[data-resume-link]");

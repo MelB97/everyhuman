@@ -74,7 +74,7 @@ eleventyExcludeFromCollections: true
 
     {#- Sign off -#}
     <div class="ind-step" data-step="finish" hidden>
-      <form class="form" name="induction" method="POST" action="/staff/induction/complete/" data-netlify="true" netlify-honeypot="bot-field" data-ind-form>
+      <form class="form" name="induction" method="POST" action="/staff/induction/complete/" data-netlify="true" netlify-honeypot="bot-field" enctype="multipart/form-data" data-ind-form>
         <h2 tabindex="-1">Sign off</h2>
         <p>Well done, you've completed every section. Enter your details below so we can record your induction.</p>
         <input type="hidden" name="form-name" value="induction">
@@ -84,6 +84,7 @@ eleventyExcludeFromCollections: true
         <input type="hidden" name="sections_completed" data-f="sections">
         <input type="hidden" name="questions_answered" data-f="questions">
         <input type="hidden" name="incorrect_attempts" data-f="wrong">
+        <input type="file" name="certificate" accept="application/pdf" hidden tabindex="-1" aria-hidden="true">
         <div class="field"><label for="i-name">Full name</label><input id="i-name" name="name" autocomplete="name" required></div>
         <div class="field-row">
           <div class="field"><label for="i-email">Email</label><input id="i-email" name="email" type="email" autocomplete="email" required></div>
@@ -97,11 +98,14 @@ eleventyExcludeFromCollections: true
           </select>
         </div>
         <label class="check check-consent"><input type="checkbox" name="declaration" value="Yes" required> I have read and understood the Every Human staff induction, and I agree to follow Every Human's policies, procedures and the NDIS Code of Conduct.</label>
-        <button class="btn btn-go" type="submit">Submit my induction</button>
-        <p class="form-note">Your answers aren't sent, just your details and confirmation that you completed every section.</p>
+        <button class="btn btn-go" type="submit" data-ind-submit>Submit my induction</button>
+        <p class="form-note" data-ind-status role="status" aria-live="polite"></p>
+        <p class="form-note">Your answers aren't sent, just your details and confirmation that you completed every section. You'll get a certificate to download, and a copy goes to the office.</p>
       </form>
       <div class="ind-nav"><button class="btn btn-line" type="button" data-back>Back</button></div>
     </div>
   </div>
   <script type="application/json" id="induction-data">"{{ sections | inductionData }}"</script>
 </section>
+<script src="/js/vendor/jspdf.umd.min.js" defer></script>
+<script src="/js/certificate.js" defer></script>
