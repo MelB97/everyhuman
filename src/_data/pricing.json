@@ -193,7 +193,7 @@
             },
             {
               "label": "Travel",
-              "price": "$1.01",
+              "price": "$1.05",
               "unit": "per km"
             }
           ]
@@ -224,7 +224,7 @@
             },
             {
               "label": "Travel",
-              "price": "$1.01",
+              "price": "$1.05",
               "unit": "per km"
             }
           ]
