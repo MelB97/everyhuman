@@ -85,62 +85,25 @@
               "label": "Travel",
               "price": "$1.05",
               "unit": "per km"
-            }
-          ]
-        },
-        {
-          "name": "Community access in a modified vehicle",
-          "detail": "Same hourly rates, with travel in a wheelchair-accessible vehicle",
-          "rates": [
-            {
-              "label": "Weekday daytime",
-              "price": "$73.58",
-              "unit": "per hour"
             },
             {
-              "label": "Weekday evening",
-              "price": "$81.07",
-              "unit": "per hour"
-            },
-            {
-              "label": "Saturday",
-              "price": "$103.54",
-              "unit": "per hour"
-            },
-            {
-              "label": "Sunday",
-              "price": "$133.50",
-              "unit": "per hour"
-            },
-            {
-              "label": "Public holiday",
-              "price": "$163.46",
-              "unit": "per hour"
-            },
-            {
-              "label": "Travel",
+              "label": "Wheelchair-accessible vehicle travel",
               "price": "$2.76",
               "unit": "per km"
             }
           ]
         },
         {
-          "name": "Life skills and public transport training",
-          "detail": "Skill development and training (Improved Daily Living)",
+          "name": "Capacity building",
+          "detail": "Building skills and independence, any day or time",
           "rates": [
             {
-              "label": "Any day or time",
+              "label": "Life skills and public transport training",
               "price": "$73.58",
               "unit": "per hour"
-            }
-          ]
-        },
-        {
-          "name": "Social skills development",
-          "detail": "Skills development and training (Increased Social and Community Participation)",
-          "rates": [
+            },
             {
-              "label": "Any day or time",
+              "label": "Social skills development",
               "price": "$83.87",
               "unit": "per hour"
             },
