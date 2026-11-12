@@ -49,6 +49,11 @@
               "label": "Activity based travel",
               "price": "$1.05",
               "unit": "per km"
+            },
+            {
+              "label": "Wheelchair-accessible vehicle travel",
+              "price": "$2.76",
+              "unit": "per km"
             }
           ]
         },
@@ -158,6 +163,11 @@
               "label": "Activity based travel",
               "price": "$1.05",
               "unit": "per km"
+            },
+            {
+              "label": "Wheelchair-accessible vehicle travel",
+              "price": "$2.76",
+              "unit": "per km"
             }
           ]
         },
@@ -188,6 +198,11 @@
             {
               "label": "Activity based travel",
               "price": "$1.05",
+              "unit": "per km"
+            },
+            {
+              "label": "Wheelchair-accessible vehicle travel",
+              "price": "$2.76",
               "unit": "per km"
             }
           ]
@@ -231,6 +246,11 @@
               "label": "Activity based travel",
               "price": "$1.05",
               "unit": "per km"
+            },
+            {
+              "label": "Wheelchair-accessible vehicle travel",
+              "price": "$2.76",
+              "unit": "per km"
             }
           ]
         },
@@ -266,6 +286,11 @@
             {
               "label": "Activity based travel",
               "price": "$1.05",
+              "unit": "per km"
+            },
+            {
+              "label": "Wheelchair-accessible vehicle travel",
+              "price": "$2.76",
               "unit": "per km"
             }
           ]
