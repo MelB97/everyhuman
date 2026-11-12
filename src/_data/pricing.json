@@ -46,7 +46,7 @@
               "unit": "per night"
             },
             {
-              "label": "Travel",
+              "label": "Activity based travel",
               "price": "$1.05",
               "unit": "per km"
             }
@@ -155,7 +155,7 @@
               "unit": "per night"
             },
             {
-              "label": "Travel",
+              "label": "Activity based travel",
               "price": "$1.05",
               "unit": "per km"
             }
@@ -186,7 +186,7 @@
               "unit": "per hour"
             },
             {
-              "label": "Travel",
+              "label": "Activity based travel",
               "price": "$1.05",
               "unit": "per km"
             }
@@ -228,7 +228,7 @@
               "unit": "per hour"
             },
             {
-              "label": "Travel",
+              "label": "Activity based travel",
               "price": "$1.05",
               "unit": "per km"
             }
@@ -264,7 +264,7 @@
               "unit": "per hour"
             },
             {
-              "label": "Travel",
+              "label": "Activity based travel",
               "price": "$1.05",
               "unit": "per km"
             }
